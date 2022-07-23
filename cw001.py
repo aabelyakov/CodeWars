@@ -13,10 +13,8 @@
 # «ABBA» -> 2 # «A» и «B» встречаются дважды
 
 
-dRes = {}
-
-
 def duplicate_count(text):
+    dRes = {}
     sLower = text.lower()
 
     for i in sLower:
@@ -27,10 +25,15 @@ def duplicate_count(text):
         dRes[k] += 1
     # endfor
 
-    print(dRes)
+    return dRes
 # enddef
 
 
 if __name__ == "__main__":
-    duplicate_count("aAsdddgH5hh6")
+    dRes = duplicate_count("aAsdd4dgH5hh67asdfasdFGHJ457")
+    print(dRes)
+    assert dRes == {
+        'a': 4, 's': 3, 'd': 5, '4': 2, 'g': 2, 'h': 4, '5': 2,
+        '6': 1, '7': 2, 'f': 2, 'j': 1
+    }
 # endif
