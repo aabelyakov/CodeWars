@@ -2,6 +2,8 @@
 # Jack really likes his number five: the trick here is that you have to
 # multiply each number by 5 raised to the number of digits of each numbers,
 # so, for example:
+# Джеку очень нравится его номер пять: хитрость здесь в том, что вы должны
+# умножить каждое число на 5, возведенное в число цифр каждого числа
 #
 # multiply(3)==15 # 3 * 5¹
 # multiply(10)==250 # 10 * 5²
