@@ -12,13 +12,25 @@
 # «aA11» -> 2 # «а» и «1»
 # «ABBA» -> 2 # «A» и «B» встречаются дважды
 
-def duplicate_count(text):
-    text_lower = text.lower()
-    print(text_lower)
 
+dRes = {}
+
+
+def duplicate_count(text):
+    sLower = text.lower()
+
+    for i in sLower:
+        dRes[i] = 0
+    # endfor
+
+    for k in sLower:
+        dRes[k] += 1
+    # endfor
+
+    print(dRes)
 # enddef
 
 
-if __name__ =="__main__":
-    pass
+if __name__ == "__main__":
+    duplicate_count("aAsdddgH5hh6")
 # endif
