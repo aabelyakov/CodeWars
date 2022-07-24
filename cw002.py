@@ -26,5 +26,4 @@ if __name__ == "__main__":
 # endif
 
 
-# python -c "import calendar; print(calendar.HTMLCalendar().formatyear(
-# 2022))" | bcat
+# python -c "import calendar; print(calendar.HTMLCalendar().formatyear(2022))" | bcat
