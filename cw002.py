@@ -24,3 +24,7 @@ if __name__ == "__main__":
     assert multiply(-3) == -15  # -3 * 5¹
     assert multiply(1) == 5  # 1 * 5¹
 # endif
+
+
+# python -c "import calendar; print(calendar.HTMLCalendar().formatyear(
+# 2022))" | bcat
