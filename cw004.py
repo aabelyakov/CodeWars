@@ -58,6 +58,7 @@ if __name__ == "__main__":
         'w', 'e', 'w', 'e', 'w', 'e', 'w',
         'e', 'w', 'e', 'w', 'e'
     ]) == False
+
     # Не вернулись назад за 10 минут
     assert is_valid_walk([
         'n', 'n', 'n', 's', 'n', 's',
