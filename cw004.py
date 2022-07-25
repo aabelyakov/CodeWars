@@ -19,7 +19,6 @@
 
 def is_valid_walk(walk: list):
 
-    pass
     return True
 # enddef
 
