@@ -7,7 +7,6 @@
 
 
 def high_and_low(n):
-    sRes = ""
     lRes = n.split(" ")
     sRes = f"{max(lRes)} {min(lRes)}"
     #print(lRes, sRes)
