@@ -17,14 +17,51 @@
 # Оно никогда не выдаст вам пустой массив, что равносильно стоянию на
 # месте.
 
-def is_valid_walk(walk: list):
+# [latitude longitude]
+# "n" - север - +1
+# "s" - юг    - -1
+# "e" - восток  - +1
+# "w" - запад   - -1
 
+def is_valid_walk(walk: list):
+    lCoord = [0, 0]
+
+    for i in walk:
+        if i == "n":
+            lCoord[0] += 1
+        elif i == "s":
+            lCoord[0] += -1
+        elif i == "e":
+            lCoord[1] += 1
+        elif i == "w":
+            lCoord[1] += -1
+        # endif
+    # endfor
+    print(f"len(walk) = {len(walk)} lCoord != {lCoord}")
+    if  len(walk) != 10 or lCoord != [0, 0]:
+        return False
+    # endif
     return True
 # enddef
 
 
 if __name__ == "__main__":
-    pass
+    # Вернулись назад за 10 минут
+    assert is_valid_walk([
+        'n', 's', 'n', 's', 'n',
+        's', 'n', 's', 'n', 's'
+    ]) == True
+
+    # Вернулись назад за 12 минут
+    assert is_valid_walk([
+        'w', 'e', 'w', 'e', 'w', 'e', 'w',
+        'e', 'w', 'e', 'w', 'e'
+    ]) == False
+    # Не вернулись назад за 10 минут
+    assert is_valid_walk([
+        'n', 'n', 'n', 's', 'n', 's',
+        'n', 's', 'n', 's'
+    ]) == False
 # endif
 
 # ===========================================================================
