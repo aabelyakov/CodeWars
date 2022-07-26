@@ -9,21 +9,30 @@
 # "The_Stealth_Warrior" --> "TheStealthWarrior"
 
 def to_camel_case(text):
+    lText1 = []
     if text == "":
         return ""
-    elif "-" in text and text[0]:
+    # endif
+    if "-" in text:
         lText = text.split("-")
-        sText = "".join(lText)
-    elif "_" in text:
+        for i in lText:
+            lText1.append(i.capitalize())
+        # endfor
+        if text[0].islower():
+            sText = "".join(lText)
+    # elif "_" in text:
+        print(sText)
 
 
-        if text[0] is lower():
 
 
 
 
 # enddef
 
+
+if __name__ == "__main__":
+    to_camel_case("the-stealth-warrior")
 
 # test.describe("Testing function to_camel_case")
 # test.it("Basic tests")
