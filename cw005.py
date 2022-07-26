@@ -9,6 +9,10 @@ def high_and_low(n):
     return sRes
 # enddef
 
+# Лучшее решение
+# def high_and_low(n):
+#     n = [int(c) for c in n.split(' ')]
+#     return f"{max(n)} {min(n)}"
 
 if __name__ == "__main__":
     assert high_and_low("1 2 3 4 5") == "5 1"
