@@ -4,45 +4,39 @@
 # пишется с заглавной буквы только в том случае, если исходное слово было
 # написано с заглавной буквы (известное как Верхний Верблюжий регистр, также
 # часто называемый регистром Паскаля).
-# Examples
-# "the-stealth-warrior" --> "theStealthWarrior"
-# "The_Stealth_Warrior" --> "TheStealthWarrior"
 
 def to_camel_case(text):
+    sText = ""
+    print(text)
     lText1 = []
-    if text == "":
-        return ""
+    lText = text.replace("_", "-").split("-")
+    print(lText)
+    # [lText1.append(i.capitalize()) for i in lText]
+    lText1 = [i.capitalize() for i in lText]
+    sText = "".join(lText1)
+    if text and text[0].islower():
+        sText = sText[0].lower() + sText[1:]
     # endif
-    if "-" in text:
-        lText = text.split("-")
-        for i in lText:
-            lText1.append(i.capitalize())
-        # endfor
-        if text[0].islower():
-            sText = "".join(lText)
-    # elif "_" in text:
-        print(sText)
-
-
-
-
-
-
+    print(sText)
+    return sText
 # enddef
 
 
 if __name__ == "__main__":
-    to_camel_case("the-stealth-warrior")
+    assert to_camel_case("") == ""
+    assert to_camel_case("A-b-C") == "ABC"
+    assert to_camel_case("the-stealth-warrior") == "theStealthWarrior"
+    assert to_camel_case("The_Stealth_Warrior") == "TheStealthWarrior"
+    assert to_camel_case("the-Pippi-was_evil") == "thePippiWasEvil"
+    assert to_camel_case("The-cat_Was_kawaii") == "TheCatWasKawaii"
+# endif
 
-# test.describe("Testing function to_camel_case")
-# test.it("Basic tests")
-# test.assert_equals(to_camel_case(''), '',
-#                    "An empty string was provided but not returned")
-# test.assert_equals(to_camel_case("the_stealth_warrior"),
-#                    "theStealthWarrior",
-#                    "to_camel_case('the_stealth_warrior') did not return correct value")
-# test.assert_equals(to_camel_case("The-Stealth-Warrior"),
-#                    "TheStealthWarrior",
-#                    "to_camel_case('The-Stealth-Warrior') did not return correct value")
-# test.assert_equals(to_camel_case("A-B-C"), "ABC",
-#                    "to_camel_case('A-B-C') did not return correct value")
+# Лучшие варианты
+# def to_camel_case(s):
+#     return s[0] + s.title().translate(None, "-_")[1:] if s else s
+# enddef
+
+# ef to_camel_case(text):
+#     words = text.replace('_', '-').split('-')
+#     return words[0] + ''.join([x.title() for x in words[1:]])
+# enddef
