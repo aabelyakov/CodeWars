@@ -5,8 +5,9 @@
 
 
 def solution(s):
-    if
-    pass
+    for i in s:
+
+
 # enddef
 
 
