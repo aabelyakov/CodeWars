@@ -15,11 +15,17 @@ def xo(s):
 # enddef
 
 
+def xo(s):
+    s = s.lower()
+    return s.count('x') == s.count('o')
+# enddef
+
+
 if __name__ == "__main__":
     assert xo("ooxx") == True
     assert xo("OOxx") == True
     assert xo("xooxx") == False
     assert xo("ooxXm") == True
     assert xo("ZzpzpzPpp") == True
-    # assert xo("zzoo") == False
+    assert xo("zzoo") == False
 # endif
