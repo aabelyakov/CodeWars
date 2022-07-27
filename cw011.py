@@ -3,23 +3,14 @@
 # следует заменить отсутствующий второй символ последней пары на символ
 # подчеркивания ('_').
 
-# def solution(s):
-#     n = 0
-#     t = []
-#     while True:
-#         t.append(
-#         n += 2
-
-    # return s
-# enddef
 
 def solution(s):
     lOut = [s[i:i+2] for i in range(0, len(s), 2) if s]
     iLen = len(lOut)
-    if len(lOut[iLen-1]) < 2:
+    if iLen > 0 and len(lOut[iLen-1]) < 2:
         lOut[iLen-1] += "_"
      # endif
-    print(lOut)
+    # print(lOut)
     return lOut
 # enddef
 
