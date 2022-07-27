@@ -3,13 +3,18 @@
 # Например:
 # solution('abc', 'bc') # returns True
 # solution('abc', 'd') # returns False
+# solution('abcde', '') # returns True
 
 
-
-def solution(string, ending):
-
-
-
+def solution(st, ending):
+    n = len(ending)
+    if not ending:
+        return True
+    elif st[-n:] == ending:
+        return True
+    else:
+        return False
+    # endif
 # enddef
 
 
