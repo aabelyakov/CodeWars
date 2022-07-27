@@ -1,10 +1,5 @@
 # Функция должна возвращать True, если первый аргумент (строка)
 # заканчивается вторым аргументом (тоже строкой).
-# Например:
-# solution('abc', 'bc') # returns True
-# solution('abc', 'd') # returns False
-# solution('abcde', '') # returns True
-
 
 def solution(st, ending):
     n = len(ending)
@@ -23,3 +18,9 @@ if __name__ == "__main__":
     assert solution('abcde', 'abc') == False
     assert solution('abcde', '') == True
 # endif
+
+# Лучшее решение:
+# def (st, ending):
+#     return st.endswith(ending)
+# enddef
+
