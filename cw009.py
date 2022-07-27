@@ -18,3 +18,20 @@
 # Example
 # input =  [[18, 20], [45, 2], [61, 12], [37, 6], [21, 21], [78, 9]]
 # output = ["Open", "Open", "Senior", "Open", "Open", "Senior"]
+
+
+def open_or_senior(data):
+    return
+
+
+# enddef
+
+
+
+if __name__ == "__main__":
+    test.assert_equals(
+        open_or_senior([(45, 12), (55, 21), (19, -2), (104, 20)]),
+        ['Open', 'Senior', 'Open', 'Senior'])
+    test.assert_equals(
+        open_or_senior([(16, 23), (73, 1), (56, 20), (1, -1)]),
+        ['Open', 'Open', 'Senior', 'Open'])
