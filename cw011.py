@@ -5,7 +5,13 @@
 
 
 def solution(s):
-    for i in s:
+    n = 0
+    t = []
+    while True:
+        t.append(s[n:n + 2])
+        n += 2
+
+    return s
 
 
 # enddef
@@ -13,10 +19,9 @@ def solution(s):
 
 if __name__ == "__main__":
     assert solution('abc') == ['ab', 'c_']
-    assert solution('abcdef') == ['ab', 'cd', 'ef']
-    assert solution("asdfadsf") == ['as', 'df', 'ad', 'sf']
-    assert solution("asdfads") == ['as', 'df', 'ad', 's_']
-    assert solution("") == []
-    assert solution("x") == ["x_"]
+    # assert solution('abcdef') == ['ab', 'cd', 'ef']
+    # assert solution("asdfadsf") == ['as', 'df', 'ad', 'sf']
+    # assert solution("asdfads") == ['as', 'df', 'ad', 's_']
+    # assert solution("") == []
+    # assert solution("x") == ["x_"]
 # endif
-
