@@ -8,7 +8,7 @@
 
 def solution(s):
     lRes = [i for i, w in enumerate(s) if w.istitle()]
-
+    lOut = [s[i:i+2] for i in range(0, len(s), 2) if s]
 # enddef
 
 
