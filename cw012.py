@@ -6,4 +6,11 @@
 # Верните ответ в виде числа.
 
 def sum_mix(arr):
-    #your code here
+
+
+# enddef
+
+
+if __name__ == "__main__":
+
+# endif
