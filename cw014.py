@@ -108,7 +108,7 @@ def to_morse(words):
 # enddef
 
 def from_morse(code):
-    msg = code.split()
+    msg = code.split("   ")
     text = []
     for str in msg:
         if str in DECODE.keys():
@@ -121,12 +121,11 @@ def from_morse(code):
 # enddef
 
 if __name__ == "__main__":
-    #print(Decode('.... . -.--   .--- ..- -.. .'))
     print(from_morse('.... . -.--   .--- ..- -.. .'))
     print(to_morse("SOS"))
-    # print(to_morse("Sos"))
-    # print(to_morse("SoS"))
-    # assert decode_morse('.... . -.--   .--- ..- -.. .') == 'HEY JUDE'
+    print(to_morse("Sos"))
+    print(to_morse("SoS"))
+    assert from_morse('.... . -.--   .--- ..- -.. .') == 'HEY JUDE'
 # endif
 
 # def decode_morse(morse_code):
