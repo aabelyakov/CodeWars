@@ -1,16 +1,127 @@
-n this kata you have to write a simple Morse code decoder. While the Morse code is now mostly superseded by voice and digital data communication channels, it still has its use in some applications around the world.
-The Morse code encodes every character as a sequence of "dots" and "dashes". For example, the letter A is coded as ·−, letter Q is coded as −−·−, and digit 1 is coded as ·−−−−. The Morse code is case-insensitive, traditionally capital letters are used. When the message is written in Morse code, a single space is used to separate the character codes and 3 spaces are used to separate words. For example, the message HEY JUDE in Morse code is ···· · −·−−   ·−−− ··− −·· ·.
+# Вы должны написать простой декодер азбуки Морзе. В то время как
+# Азбука Морзе в настоящее время в основном вытесняется голосом и цифровыми
+# данными, она все еще используется в некоторых приложениях.
+#
+# Код Морзе кодирует каждый символ как последовательность «точек» и
+# «тире». Например, буква A кодируется как ·−, буква Q кодируется
+# как −−·−, а цифра 1 кодируется как ·−−−−.
+# Азбука Морзе нечувствительна к регистру, традиционно используются заглавные
+# буквы.
+# Когда сообщение написано на Азбука Морзе, один пробел используется для
+# разделения символов и 3 пробела используются для разделения слов.
+# Например, сообщение HEY JUDE на Азбуке Морзе выглядит так
+# ···· · −·−−   ·−−− ··− −·· ·
+#
+# ПРИМЕЧАНИЕ. Лишние пробелы до или после кода не имеют значения и должны быть
+# удалены.
+#
+# Помимо букв, цифр и некоторых знаков препинания, имеются специальные
+# служебные коды, самый известный из них – международный
+# сигнал бедствия SOS (впервые изданный Титаником), закодированный
+# как ···−−−···. Эти специальные коды рассматриваются как отдельные
+# специальные коды символов, и обычно передаются как отдельные слова.
+#
+# Ваша задача — реализовать функцию, которая воспринимала бы азбуку Морзе
+# и возвращала декодированную строку.
+#
+# Например:
+# decode_morse('.... .-.-- .--- ..- -.. .')
+# #должен возвращать "ЭЙ, ДЖУД"
+# ПРИМЕЧАНИЕ. В целях кодирования вы должны использовать символы ASCII, а не
+# символы Юникода.
 
-NOTE: Extra spaces before or after the code have no meaning and should be ignored.
+CODE = {
+    'A': '.-',
+    'B': '-...',
+    'C': '-.-.',
+    'D': '-..',
+    'E': '.',
+    'F': '..-.',
+    'G': '--.',
+    'H': '....',
+    'I': '..',
+    'J': '.---',
+    'K': '-.-',
+    'L': '.-..',
+    'M': '--',
+    'N': '-.',
+    'O': '---',
+    'P': '.--.',
+    'Q': '--.-',
+    'R': '.-.',
+    'S': '...',
+    'T': '-',
+    'U': '..-',
+    'V': '...-',
+    'W': '.--',
+    'X': '-..-',
+    'Y': '-.--',
+    'Z': '--..',
+    '1': '.----',
+    '2': '..---',
+    '3': '...--',
+    '4': '....-',
+    '5': '.....',
+    '6': '-....',
+    '7': '--...',
+    '8': '---..',
+    '9': '----.',
+    '0': '-----',
+}
+DECODE = {
+    '.-': 'A', '-...': 'B', '-.-.': 'C', '-..': 'D', '.': 'E',
+    '..-.': 'F', '--.': 'G', '....': 'H', '..': 'I', '.---': 'J',
+    '-.-': 'K', '.-..': 'L', '--': 'M', '-.': 'N', '---': 'O',
+    '.--.': 'P', '--.-': 'Q', '.-.': 'R', '...': 'S', '-': 'T',
+    '..-': 'U', '...-': 'V', '.--': 'W', '-..-': 'X', '-.--': 'Y',
+    '--..': 'Z', '.----': '1', '..---': '2', '...--': '3',
+    '....-': '4', '.....': '5', '-....': '6', '--...': '7',
+    '---..': '8', '----.': '9', '-----': '0'
+}
 
-In addition to letters, digits and some punctuation, there are some special service codes, the most notorious of those is the international distress signal SOS (that was first issued by Titanic), that is coded as ···−−−···. These special codes are treated as single special characters, and usually are transmitted as separate words.
 
-Your task is to implement a function that would take the morse code as input and return a decoded human-readable string.
+def Decode(msg):
+    value = CODE.keys()
+    key = CODE.values()
+    DECODE = dict(zip(key, value))
+    print(DECODE)
+    # msg = self.contents.GetValue()
+    # self.coder.Clear()
+    msg1 = msg.split()
+    text = []
+    for str in msg1:
+        if str in DECODE.keys():
+            text.append(DECODE[str])
 
-For example:
+    return text
+    # coder.write("%s " % (text))
 
-decode_morse('.... . -.--   .--- ..- -.. .')
-#should return "HEY JUDE"
-NOTE: For coding purposes you have to use ASCII characters . and -, not Unicode characters.
-The Morse code table is preloaded for you as a dictionary, feel free to use it:
-Python: MORSE_CODE['.--']
+def to_morse(words):
+    code = ""
+    for char in words.upper():
+        code += f' {LETTERS_TO_MC[char]} '
+    # endfor
+    return code
+# enddef
+
+def from_morse(code):
+    lRes = code.split()
+    print(lRes)
+    for i in lRes:
+        pass
+
+
+# enddef
+
+if __name__ == "__main__":
+    print(Decode('.... . -.--   .--- ..- -.. .'))
+    # print(to_morse("SOS"))
+    # print(to_morse("Sos"))
+    # print(to_morse("SoS"))
+    # assert decode_morse('.... . -.--   .--- ..- -.. .') == 'HEY JUDE'
+# endif
+
+# def decode_morse(morse_code):
+#     # ToDo: Accept dots, dashes and spaces, return human-readable message
+#     return morse_code.replace('.', MORSE_CODE['.'])\
+#         .replace('-',  MORSE_CODE['-']).replace(' ', '')
