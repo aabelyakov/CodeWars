@@ -79,43 +79,51 @@ DECODE = {
     '---..': '8', '----.': '9', '-----': '0'
 }
 
-
-def Decode(msg):
+# Создание словаря DECODE из словаря CODE
+def Decode():
     value = CODE.keys()
     key = CODE.values()
     DECODE = dict(zip(key, value))
     print(DECODE)
-    # msg = self.contents.GetValue()
-    # self.coder.Clear()
-    msg1 = msg.split()
-    text = []
-    for str in msg1:
-        if str in DECODE.keys():
-            text.append(DECODE[str])
+    return DECODE
+# enddef
 
-    return text
-    # coder.write("%s " % (text))
+    # # msg = self.contents.GetValue()
+    # # self.coder.Clear()
+    # msg1 = msg.split()
+    # text = []
+    # for str in msg1:
+    #     if str in DECODE.keys():
+    #         text.append(DECODE[str])
+    #
+    # return text
+    # # coder.write("%s " % (text))
 
 def to_morse(words):
     code = ""
     for char in words.upper():
-        code += f' {LETTERS_TO_MC[char]} '
+        code += f' {CODE[char]} '
     # endfor
     return code
 # enddef
 
 def from_morse(code):
-    lRes = code.split()
-    print(lRes)
-    for i in lRes:
-        pass
-
+    msg = code.split()
+    text = []
+    for str in msg:
+        if str in DECODE.keys():
+            text.append(DECODE[str])
+        # endif
+    # endfor
+    return text
+# enddef
 
 # enddef
 
 if __name__ == "__main__":
-    print(Decode('.... . -.--   .--- ..- -.. .'))
-    # print(to_morse("SOS"))
+    #print(Decode('.... . -.--   .--- ..- -.. .'))
+    print(from_morse('.... . -.--   .--- ..- -.. .'))
+    print(to_morse("SOS"))
     # print(to_morse("Sos"))
     # print(to_morse("SoS"))
     # assert decode_morse('.... . -.--   .--- ..- -.. .') == 'HEY JUDE'
