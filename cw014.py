@@ -79,6 +79,7 @@ DECODE = {
     '---..': '8', '----.': '9', '-----': '0'
 }
 
+
 # Создание словаря DECODE из словаря CODE
 def Decode():
     value = CODE.keys()
@@ -86,18 +87,20 @@ def Decode():
     DECODE = dict(zip(key, value))
     print(DECODE)
     return DECODE
+
+
 # enddef
 
-    # # msg = self.contents.GetValue()
-    # # self.coder.Clear()
-    # msg1 = msg.split()
-    # text = []
-    # for str in msg1:
-    #     if str in DECODE.keys():
-    #         text.append(DECODE[str])
-    #
-    # return text
-    # # coder.write("%s " % (text))
+# # msg = self.contents.GetValue()
+# # self.coder.Clear()
+# msg1 = msg.split()
+# text = []
+# for str in msg1:
+#     if str in DECODE.keys():
+#         text.append(DECODE[str])
+#
+# return text
+# # coder.write("%s " % (text))
 
 def to_morse(words):
     code = ""
@@ -105,30 +108,35 @@ def to_morse(words):
         code += f' {CODE[char]} '
     # endfor
     return code
+
+
 # enddef
 
+
 def from_morse(code):
-    msg = code.split("   ")
-    text = []
-    for str in msg:
-        if str in DECODE.keys():
-            text.append(DECODE[str])
-        # endif
+    # Список слов
+    lWrd = code.split("   ")
+    print(2, lWrd)
+
+    text = ""
+    for sim in lWrd:
+        # Список символов
+        lSim = sim.split()
+        print(2, lSim)
+
+        for k in lSim:
+            # По символам
+            text += DECODE[k]
+        # endfor
     # endfor
     return text
 # enddef
 
-# enddef
 
 if __name__ == "__main__":
     print(from_morse('.... . -.--   .--- ..- -.. .'))
-    print(to_morse("SOS"))
-    print(to_morse("Sos"))
-    print(to_morse("SoS"))
-    assert from_morse('.... . -.--   .--- ..- -.. .') == 'HEY JUDE'
+    # print(to_morse("SOS"))
+    # print(to_morse("Sos"))
+    # print(to_morse("SoS"))
+    # assert from_morse('.... . -.--   .--- ..- -.. .') == 'HEY JUDE'
 # endif
-
-# def decode_morse(morse_code):
-#     # ToDo: Accept dots, dashes and spaces, return human-readable message
-#     return morse_code.replace('.', MORSE_CODE['.'])\
-#         .replace('-',  MORSE_CODE['-']).replace(' ', '')
