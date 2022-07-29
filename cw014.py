@@ -31,43 +31,15 @@
 # символы Юникода.
 
 CODE = {
-    'A': '.-',
-    'B': '-...',
-    'C': '-.-.',
-    'D': '-..',
-    'E': '.',
-    'F': '..-.',
-    'G': '--.',
-    'H': '....',
-    'I': '..',
-    'J': '.---',
-    'K': '-.-',
-    'L': '.-..',
-    'M': '--',
-    'N': '-.',
-    'O': '---',
-    'P': '.--.',
-    'Q': '--.-',
-    'R': '.-.',
-    'S': '...',
-    'T': '-',
-    'U': '..-',
-    'V': '...-',
-    'W': '.--',
-    'X': '-..-',
-    'Y': '-.--',
-    'Z': '--..',
-    '1': '.----',
-    '2': '..---',
-    '3': '...--',
-    '4': '....-',
-    '5': '.....',
-    '6': '-....',
-    '7': '--...',
-    '8': '---..',
-    '9': '----.',
-    '0': '-----',
+    'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.',
+    'G': '--.', 'H': '....', 'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..',
+    'M': '--', 'N': '-.', 'O': '---', 'P': '.--.', 'Q': '--.-', 'R': '.-.',
+    'S': '...', 'T': '-', 'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-',
+    'Y': '-.--', 'Z': '--..', '1': '.----', '2': '..---', '3': '...--',
+    '4': '....-', '5': '.....', '6': '-....', '7': '--...', '8': '---..',
+    '9': '----.', '0': '-----'
 }
+
 DECODE = {
     '.-': 'A', '-...': 'B', '-.-.': 'C', '-..': 'D', '.': 'E',
     '..-.': 'F', '--.': 'G', '....': 'H', '..': 'I', '.---': 'J',
@@ -85,58 +57,40 @@ def Decode():
     value = CODE.keys()
     key = CODE.values()
     DECODE = dict(zip(key, value))
-    print(DECODE)
+    # print(DECODE)
     return DECODE
-
-
 # enddef
 
-# # msg = self.contents.GetValue()
-# # self.coder.Clear()
-# msg1 = msg.split()
-# text = []
-# for str in msg1:
-#     if str in DECODE.keys():
-#         text.append(DECODE[str])
-#
-# return text
-# # coder.write("%s " % (text))
 
 def to_morse(words):
     code = ""
     for char in words.upper():
-        code += f' {CODE[char]} '
+        code += f"{CODE[char]} "
     # endfor
-    return code
-
-
+    return code.rstrip()
 # enddef
 
 
 def from_morse(code):
     # Список слов
     lWrd = code.split("   ")
-    print(2, lWrd)
-
     text = ""
     for sim in lWrd:
         # Список символов
         lSim = sim.split()
-        print(2, lSim)
-
         for k in lSim:
             # По символам
             text += DECODE[k]
         # endfor
+        text += " "
     # endfor
-    return text
+    return text.rstrip()
 # enddef
 
 
 if __name__ == "__main__":
-    print(from_morse('.... . -.--   .--- ..- -.. .'))
-    # print(to_morse("SOS"))
-    # print(to_morse("Sos"))
-    # print(to_morse("SoS"))
-    # assert from_morse('.... . -.--   .--- ..- -.. .') == 'HEY JUDE'
+    assert to_morse("SOS") == "... --- ..."
+    assert to_morse("Sos") == "... --- ..."
+    assert to_morse("SoS") == "... --- ..."
+    assert from_morse('.... . -.--   .--- ..- -.. .') == 'HEY JUDE'
 # endif
