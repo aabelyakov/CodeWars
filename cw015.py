@@ -7,8 +7,8 @@ def pig_it(text):
     text1 = text.split(" ")
     # print(text1)
     for k in text1:
-        if len(k) > 0 and k.isalnum():
-            beg = k[0]
+        if len(k) > 0 and k.isalpha():
+            beg = k[:1]
             end = k[1:]
             sRes += end + beg + "ay" + " "
         elif len(k) == 1:
@@ -18,6 +18,13 @@ def pig_it(text):
     # print(sRes.rstrip())
     return sRes.rstrip()
 # enddef
+
+
+# def pig_it(text):
+#     lst = text.split()
+#     return ' '.join([word[1:] + word[:1] + 'ay' if word.isalpha() \
+#         else word for word in lst])
+# # enddef
 
 
 if __name__ == "__main__":
