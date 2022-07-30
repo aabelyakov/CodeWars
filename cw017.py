@@ -5,8 +5,25 @@
 # этот «инородец» N.
 
 
-def find_outlier(integers):
-    return None
+def find_outlier(n):
+    lC = lN = []
+    for i, k in enumerate(n):
+        if k % 2 == 0:
+            lC.append(i)
+            print(i, 'чётное')
+        else:
+            lN.append(i)
+            print(i, 'нечётное')
+        # endif
+    # endfor
+    if len(lC) == 1:
+        # print(f"N - чётное - {n[d['чётное']]-1}")
+        return n[lC[0]]
+    elif  len(lN) == 1:
+        # print(f"N - нечётное - {n[d['нечётное']-1]}")
+        return n[lN[0]]
+    # endif
+
 # enddef
 
 if __name__ == "__main__":
