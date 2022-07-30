@@ -76,7 +76,7 @@ def from_morse(code):
     lWrd = code.split("   ")
     text = ""
     for sim in lWrd:
-        # Список символов
+        # Список символов из строки с символами
         lSim = sim.split()
         for k in lSim:
             # По символам
