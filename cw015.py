@@ -1,5 +1,5 @@
 # Переместите первую букву каждого слова в конец, а затем добавьте «ау» в
-# конец слова. Оставьте знаки препинания и остальное - нетронутыми.
+# конец слова. Оставьте знаки препинания  - нетронутыми.
 
 
 def pig_it(text):
@@ -7,11 +7,11 @@ def pig_it(text):
     text1 = text.split(" ")
     # print(text1)
     for k in text1:
-        if len(k) > 1:
+        if len(k) > 0 and k.isalnum():
             beg = k[0]
             end = k[1:]
             sRes += end + beg + "ay" + " "
-        else:
+        elif len(k) == 1:
             sRes += k
         # endif
     # endfor
@@ -21,7 +21,11 @@ def pig_it(text):
 
 
 if __name__ == "__main__":
+    assert pig_it("O tempora o mores !") == 'Oay emporatay oay oresmay !'
     assert pig_it('Hello world !') == "elloHay orldway !"
     assert pig_it('Pig latin is cool') == 'igPay atinlay siay oolcay'
     assert pig_it('This is my string') == 'hisTay siay ymay tringsay'
 # endif
+
+
+# "O tempora o mores !" ==> 'Oay emporatay oay oresmay !'
