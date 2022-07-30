@@ -65,7 +65,8 @@ def Decode():
 def to_morse(words):
     code = ""
     for char in words.upper():
-        code += f"{CODE[char]} "
+        # code += f"{CODE[char]} "
+        code += f"{CODE.get(char, ' ')} "
     # endfor
     return code.rstrip()
 # enddef
@@ -89,8 +90,16 @@ def from_morse(code):
 
 
 if __name__ == "__main__":
+    assert from_morse('.... . -.--   .--- ..- -.. .') == 'HEY JUDE'
+    assert to_morse("hEllO mOrSe") == ".... . .-.. .-.. ---   -- --- .-. ... ."
+    assert from_morse(".... . .-.. .-.. ---   -- --- .-. ... .") == "HELLO MORSE"
     assert to_morse("SOS") == "... --- ..."
+    assert from_morse("... --- ...") == "SOS"
     assert to_morse("Sos") == "... --- ..."
     assert to_morse("SoS") == "... --- ..."
-    assert from_morse('.... . -.--   .--- ..- -.. .') == 'HEY JUDE'
+    assert to_morse("HeLLo") == ".... . .-.. .-.. ---"
+    assert from_morse(".... . .-.. .-.. ---") == "HELLO"
+    assert to_morse('hEY JuDE hellO') == ".... . -.--   .--- ..- -.. .   " \
+                                         ".... . .-.. .-.. ---"
+
 # endif
