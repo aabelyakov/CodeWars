@@ -5,10 +5,10 @@
 def pig_it(text):
     text1 = text.split(" ")
     print(text1)
-    # for k in text1:
-    #     beg = text1[0]
-    #     end = text1[1:]
-    #     print(end+beg)
+    for k in text1:
+        beg = k[0]
+        end = k[1:]
+        print(end+beg)
 
 
 
