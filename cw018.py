@@ -26,21 +26,34 @@
 # if n = 0 or k > n or k <= 0 return ""
 #     (return Nothing in Elm, "nothing" in Erlang).
 
-def longest_consec(strarr, k):
-    pass
-
-
+def longest_consec(r, k):
+    l2 = []
+    ss = {}
+    n = len(r)
+    for i in range(0, n, 2):
+        l1 = r[i:k + i]
+        print(1, l1)
+        l2.append("".join(l1))
+    # endfor
+    print(2, l2)
+    for s in l2:
+        ss[s] = len(s)
+    # endfor
+    print(3,ss)
+    return
 # enddef
 
 if __name__ == "__main__":
-    assert longest_consec(
-        ["zone", "abigail", "theta", "form", "libe", "zas"], 2
-    ) == "abigailtheta"
-    assert longest_consec(
-        ["ejjjjmmtthh", "zxxuueeg", "aanlljrrrxx", "dqqqaaabbb",
-         "oocccffuucccjjjkkkjyyyeehh"], 1
-    ) == "oocccffuucccjjjkkkjyyyeehh"
-    assert longest_consec([], 3) == ""
+    # longest_consec(["zone", "abigail", "theta", "form", "libe",
+    #                 "zas"], 2)
+    # assert longest_consec(
+    #     ["zone", "abigail", "theta", "form", "libe", "zas"], 2
+    # ) == "zoneabigail"
+    # assert longest_consec(
+    #     ["ejjjjmmtthh", "zxxuueeg", "aanlljrrrxx", "dqqqaaabbb",
+    #      "oocccffuucccjjjkkkjyyyeehh"], 1
+    # ) == "oocccffuucccjjjkkkjyyyeehh"
+    # # assert longest_consec([], 3) == ""
     assert longest_consec(
         ["itvayloxrp", "wkppqsztdkmvcuwvereiupccauycnjutlv",
         "vweqilsfytihvrzlaodfixoyxvyuyvgpck"], 2
