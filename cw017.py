@@ -6,17 +6,19 @@
 
 
 def find_outlier(n):
-    lC = []
-    lN = []
-    for i, k in enumerate(n):
-        if k % 2 == 0:
-            lC.append(i)
-        else:
-            lN.append(i)
-        # endif
-    # endfor
-    # print(lC)
-    # print(lN)
+    # lC = []
+    # lN = []
+    # for i, k in enumerate(n):
+    #     if k % 2 == 0:
+    #         lC.append(i)
+    #     else:
+    #         lN.append(i)
+    #     # endif
+    # # endfor
+    lC = [i for i, k in enumerate(n) if k % 2 == 0]
+    lN = [i for i, k in enumerate(n) if k % 2 != 0]
+    print(lC)
+    print(lN)
     if len(lC) == 1:
         return n[lC[0]]
     elif len(lN) == 1:
