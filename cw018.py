@@ -37,16 +37,16 @@ if __name__ == "__main__":
         ["zone", "abigail", "theta", "form", "libe", "zas"], 2
     ) == "abigailtheta"
     assert longest_consec(
-    ["ejjjjmmtthh", "zxxuueeg", "aanlljrrrxx", "dqqqaaabbb",
-     "oocccffuucccjjjkkkjyyyeehh"], 1
+        ["ejjjjmmtthh", "zxxuueeg", "aanlljrrrxx", "dqqqaaabbb",
+         "oocccffuucccjjjkkkjyyyeehh"], 1
     ) == "oocccffuucccjjjkkkjyyyeehh"
     assert longest_consec([], 3) == ""
     assert longest_consec(
-    ["itvayloxrp", "wkppqsztdkmvcuwvereiupccauycnjutlv",
-     "vweqilsfytihvrzlaodfixoyxvyuyvgpck"], 2
+        ["itvayloxrp", "wkppqsztdkmvcuwvereiupccauycnjutlv",
+        "vweqilsfytihvrzlaodfixoyxvyuyvgpck"], 2
     ) == "wkppqsztdkmvcuwvereiupccauycnjutlvvweqilsfytihvrzlaodfixoyxvyuyvgpck"
     assert longest_consec(
-    ["wlwsasphmxx", "owiaxujylentrklctozmymu", "wpgozvxxiu"], 2
+        ["wlwsasphmxx", "owiaxujylentrklctozmymu", "wpgozvxxiu"], 2
     ) == "wlwsasphmxxowiaxujylentrklctozmymu"
     assert longest_consec(
         ["zone", "abigail", "theta", "form", "libe","zas"], -2
