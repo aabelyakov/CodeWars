@@ -18,6 +18,7 @@ The first that came is "folingtrashy" so
 longest_consec(strarr, 2) should return "folingtrashy".
 
 In the same way:
-longest_consec(["zone", "abigail", "theta", "form", "libe", "zas", "theta", "abigail"], 2) --> "abigailtheta"
+longest_consec(
+    ["zone", "abigail", "theta", "form", "libe", "zas", "theta", "abigail"], 2) --> "abigailtheta"
 n being the length of the string array, if n = 0 or k > n or k <= 0 return "" (return Nothing in Elm, "nothing" in Erlang).
 
