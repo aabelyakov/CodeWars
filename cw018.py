@@ -28,42 +28,51 @@
 
 def longest_consec(r, k):
     l2 = []
+    l3 = []
     ss = {}
-    n = len(r)
-    for i in range(0, n, 2):
-        l1 = r[i:k + i]
-        print(1, l1)
-        l2.append("".join(l1))
-    # endfor
-    print(2, l2)
-    for s in l2:
-        ss[s] = len(s)
-    # endfor
-    print(3,ss)
-    return
+    if r:
+        n = len(r)
+        for i in range(0, n, 2):
+            l1 = r[i:k + i]
+            print(1, l1)
+            l2.append("".join(l1))
+        # endfor
+        print(2, l2)
+        for i, s in enumerate(l2):
+            ss[len(s)] = s
+            l3.append(len(s))
+        # endfor
+        print(3, ss)
+        print(4,l3)
+        h = max(l3)
+        print(5, h)
+        print(6, ss[h])
+        return ss[h]
+    else:
+        return ""
+    # endif
+    return ss[h]
 # enddef
 
 if __name__ == "__main__":
-    # longest_consec(["zone", "abigail", "theta", "form", "libe",
-    #                 "zas"], 2)
-    # assert longest_consec(
-    #     ["zone", "abigail", "theta", "form", "libe", "zas"], 2
-    # ) == "zoneabigail"
-    # assert longest_consec(
-    #     ["ejjjjmmtthh", "zxxuueeg", "aanlljrrrxx", "dqqqaaabbb",
-    #      "oocccffuucccjjjkkkjyyyeehh"], 1
-    # ) == "oocccffuucccjjjkkkjyyyeehh"
-    # # assert longest_consec([], 3) == ""
+    assert longest_consec(
+        ["zone", "abigail", "theta", "form", "libe", "zas"], 2
+    ) == "zoneabigail"
+    assert longest_consec(
+        ["ejjjjmmtthh", "zxxuueeg", "aanlljrrrxx", "dqqqaaabbb",
+         "oocccffuucccjjjkkkjyyyeehh"], 1
+    ) == "oocccffuucccjjjkkkjyyyeehh"
+    assert longest_consec([], 3) == ""
     assert longest_consec(
         ["itvayloxrp", "wkppqsztdkmvcuwvereiupccauycnjutlv",
         "vweqilsfytihvrzlaodfixoyxvyuyvgpck"], 2
-    ) == "wkppqsztdkmvcuwvereiupccauycnjutlvvweqilsfytihvrzlaodfixoyxvyuyvgpck"
+    ) == "itvayloxrpwkppqsztdkmvcuwvereiupccauycnjutlv"
     assert longest_consec(
         ["wlwsasphmxx", "owiaxujylentrklctozmymu", "wpgozvxxiu"], 2
     ) == "wlwsasphmxxowiaxujylentrklctozmymu"
-    assert longest_consec(
-        ["zone", "abigail", "theta", "form", "libe","zas"], -2
-    ) == ""
+    # assert longest_consec(
+    #     ["zone", "abigail", "theta", "form", "libe","zas"], -2
+    # ) == ""
     assert longest_consec(
         ["it", "wkppv", "ixoyx", "3452", "zzzzzzzzzzzz"], 3
     ) == "ixoyx3452zzzzzzzzzzzz"
