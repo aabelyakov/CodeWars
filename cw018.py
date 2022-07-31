@@ -12,49 +12,41 @@
 # blueabcdef   ("      10)  concatenation of strarr[3] and strarr[4]
 # abcdefuvwxyz ("      12)  concatenation of strarr[4] and strarr[5]
 
-# Two strings are the longest: "folingtrashy" and "abcdefuvwxyz".
-# The first that came is "folingtrashy" so longest_consec(strarr, 2)
-# should return "folingtrashy".
-
 # Две строки самые длинные: «folingtrashy» и «abcdefuvwxyz».
 # Первое, что пришло, это "folingtrashy", поэтому longest_consec(strarr, 2)
 # должно возвращать "folingtrashy".
 
 # longest_consec(
-#     ["zone", "abigail", "theta", "form", "libe", "zas", "theta", "abigail"], 2) --> "abigailtheta"
-# n being the length of the string array,
-# if n = 0 or k > n or k <= 0 return ""
-#     (return Nothing in Elm, "nothing" in Erlang).
+#     ["zone", "abigail", "theta", "form", "libe",
+#     "zas", "theta", "abigail"], 2) --> "abigailtheta"
+# n - длина массива строк,
+# если n == 0 или k > n или k <= 0 вернуть ""
 
 def longest_consec(r, k):
     l2 = []
     l3 = []
     ss = {}
-    if r:
-        n = len(r)
+    n = len(r)
+    if not (n == 0 or k > n or k<= 0):
         for i in range(0, n, 2):
             l1 = r[i:k + i]
-            print(1, l1)
             l2.append("".join(l1))
         # endfor
-        print(2, l2)
         for i, s in enumerate(l2):
             ss[len(s)] = s
             l3.append(len(s))
         # endfor
-        print(3, ss)
-        print(4,l3)
         h = max(l3)
-        print(5, h)
-        print(6, ss[h])
         return ss[h]
     else:
         return ""
     # endif
-    return ss[h]
 # enddef
 
 if __name__ == "__main__":
+    assert longest_consec(
+       ["zone", "abigail", "theta", "form", "libe", "zas"], 2
+    ) == "abigailtheta"
     assert longest_consec(
         ["zone", "abigail", "theta", "form", "libe", "zas"], 2
     ) == "zoneabigail"
@@ -70,9 +62,9 @@ if __name__ == "__main__":
     assert longest_consec(
         ["wlwsasphmxx", "owiaxujylentrklctozmymu", "wpgozvxxiu"], 2
     ) == "wlwsasphmxxowiaxujylentrklctozmymu"
-    # assert longest_consec(
-    #     ["zone", "abigail", "theta", "form", "libe","zas"], -2
-    # ) == ""
+    assert longest_consec(
+        ["zone", "abigail", "theta", "form", "libe","zas"], -2
+    ) == ""
     assert longest_consec(
         ["it", "wkppv", "ixoyx", "3452", "zzzzzzzzzzzz"], 3
     ) == "ixoyx3452zzzzzzzzzzzz"
