@@ -31,7 +31,7 @@ def score(x):
     for k in x:
         d1[k] += 1
         if d1[1] == 1:
-            sc = 100
+            sc += 100
         if d1[1] == 2:
             sc = 200
         if d1[1] == 3:
