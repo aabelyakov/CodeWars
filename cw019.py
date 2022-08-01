@@ -26,81 +26,70 @@
 
 
 def score(x):
-    sc = 0
     d1 = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0}
+    c1 = c2 = c3 = c4 = c5 = c6 = 0
     for k in x:
         if k == 1:
             if d1[1] == 0:
-                sc += 100
+                c1 += 100
             # endif
             if d1[1] == 1:
-                sc += 100
+                c1 += 100
             # endif
             if d1[1] == 2:
-                sc = 1000
+                c1 = 1000
             # endif
-            if d1[1] == 3:
-                sc += 100
-            # endif
-            if d1[1] == 4:
-                sc += 100
-            # endif
-            if d1[1] == 5:
-                sc += 100
-            # endif
-            if d1[1] == 6:
-                sc += 100
+            if d1[1] == 3 or d1[1] == 4 or d1[1] == 5 or d1[1] == 6:
+                c1 += 100
             # endif
         # endif
         if k == 2:
             if d1[2] == 2:
-                sc += 200
+                c2 = 200
             # endif
         # endif
         if k == 3:
             if d1[3] == 2:
-                sc += 300
+                c3 = 300
             # endif
         # endif
-        if
-        if d1[4] == 3:
-            sc += 400
+        if k == 4:
+            if d1[4] == 2:
+                c4 = 400
+            # endif
         # endif
-        if d1[5] == 1:
-            sc = 50
+        if k == 5:
+            if d1[5] == 0:
+                c5 += 50
+            # endif
+            if d1[5] == 1:
+                c5 += 50
+            # endif
+            if d1[5] == 2:
+                c5 = 500
+            # endif
+            if d1[5] == 3 or d1[5] == 4 or d1[5] == 5:
+                c5 += 50
+            # endif
         # endif
-        if d1[5] == 2:
-            sc = 100
-        # endif
-        if d1[5] == 3:
-            sc = 500
-        # endif
-        if d1[5] == 4:
-            sc += 50
-        # endif
-        if d1[5] == 5:
-            sc += 50
-        # endif
-        if d1[5] == 6:
-            sc += 50
-        # endif
-        if d1[6] == 3:
-            sc += 600
+        if k == 6:
+            if d1[6] == 2:
+                c6 = 600
+            # endif
         # endif
         d1[k] += 1
     # endfor
-    print(d1)
-
-    return sc
+    # print(d1)
+    return c1 + c2 + c3 + c4 + c5 + c6
 # enddef
 
 
 if __name__ == "__main__":
-    # print(score([2, 4, 4, 5, 4]))
-    # assert score([2, 3, 4, 6, 2]) == 0
-    # assert score([4, 4, 4, 3, 3]) == 400
-    # assert score([2, 4, 4, 5, 4]) == 450
-    # assert score([5, 1, 3, 4, 1]) == 250
+    assert score([2, 3, 4, 6, 2]) == 0
+    assert score([4, 4, 4, 3, 3]) == 400
+    assert score([2, 4, 4, 5, 4]) == 450
+    assert score([5, 1, 3, 4, 1]) == 250
     assert score([1, 1, 1, 3, 1]) == 1100
-    # assert score([2, 4, 4, 5, 4]) == 450
+    assert score([2, 4, 4, 5, 4]) == 450
 # endif
+
