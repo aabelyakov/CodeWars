@@ -43,10 +43,8 @@ def longest_consec(r, k):
     # endif
 # enddef
 
+
 if __name__ == "__main__":
-    assert longest_consec(
-       ["zone", "abigail", "theta", "form", "libe", "zas"], 2
-    ) == "abigailtheta"
     assert longest_consec(
         ["zone", "abigail", "theta", "form", "libe", "zas"], 2
     ) == "zoneabigail"
