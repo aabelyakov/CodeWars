@@ -30,40 +30,53 @@ def score(x):
     d1 = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0}
     for k in x:
         d1[k] += 1
+        if d1[1] == 1:
+            sc = 100
+        if d1[1] == 2:
+            sc = 200
+        if d1[1] == 3:
+            sc = 1000
+        if d1[1] == 4:
+            sc += 100
+        if d1[1] == 5:
+            sc += 100
+        if d1[1] == 6:
+            sc += 100
+        if d1[2] == 3:
+            sc += 200
+        if d1[3] == 3:
+            sc += 300
+        if d1[4] == 3:
+            sc += 400
+        if d1[5] == 1:
+            sc = 50
+        if d1[5] == 2:
+            sc = 100
+        if d1[5] == 3:
+            sc = 500
+        if d1[5] == 4:
+            sc += 50
+        if d1[5] == 5:
+            sc += 50
+        if d1[5] == 6:
+            sc += 50
+        if d1[6] == 3:
+            sc += 600
+        # endif
+
     # endfor
     print(d1)
 
-    if d1[1] == 1:
-        sc += 100
-    if d1[1] == 2:
-        sc += 200
-    if d1[1] == 3 or d1[1] == 4 or d1[1] == 5 or d1[1] == 6:
-        sc += 1000
-    if d1[2] == 3:
-        sc += 200
-    if d1[3] == 3:
-        sc += 300
-    if d1[4] == 3:
-        sc += 400
-    if d1[5] == 1:
-        sc += 50
-    if d1[5] == 2:
-        sc += 100
-    if d1[5] == 3:
-        sc += 500
-    if d1[6] == 3:
-        sc += 600
-    # endif
     return sc
 # enddef
 
 
 if __name__ == "__main__":
-    # print(score([2, 4, 4, 5, 4]))
-    # assert score([2, 3, 4, 6, 2]) == 0
-    # assert score([4, 4, 4, 3, 3]) == 400
-    # assert score([2, 4, 4, 5, 4]) == 450
-    # assert score([5, 1, 3, 4, 1]) == 250
+    print(score([2, 4, 4, 5, 4]))
+    assert score([2, 3, 4, 6, 2]) == 0
+    assert score([4, 4, 4, 3, 3]) == 400
+    assert score([2, 4, 4, 5, 4]) == 450
+    assert score([5, 1, 3, 4, 1]) == 250
     assert score([1, 1, 1, 3, 1]) == 1100
     assert score([2, 4, 4, 5, 4]) == 450
 # endif
