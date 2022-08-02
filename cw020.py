@@ -10,21 +10,33 @@
 
 
 def first_non_repeating_letter(s):
-
-
+    if s:
+        print(s)
+        s1 = s.lower()
+        for i, k in enumerate(s1):
+            if k in s1[i+1:] or k in s1[:i]:
+                continue
+            # endif
+            print(s[i])
+            return s[i]
+        # endfor
+    else:
+        return ""
+    # endif
 # enddef
 
 
 if __name__ == "__main__":
-    assert first_non_repeating_letter('a') == 'a'
-    assert first_non_repeating_letter('stress') == 't'
-    assert first_non_repeating_letter('moonmen') == 'e'
-    assert first_non_repeating_letter('') == ''
-    assert first_non_repeating_letter('abba') == ''
+    # print(first_non_repeating_letter('stress'))
+    # assert first_non_repeating_letter('a') == 'a'
+    # assert first_non_repeating_letter('stress') == 't'
+    # assert first_non_repeating_letter('moonmen') == 'e'
+    # assert first_non_repeating_letter('') == ''
+    # assert first_non_repeating_letter('abba') == ''
     assert first_non_repeating_letter('aa') == ''
-    assert first_non_repeating_letter('~><#~><') == '#'
-    assert first_non_repeating_letter('hello world, eh?') == 'w'
-    assert first_non_repeating_letter('sTreSS') == 'T'
-    assert first_non_repeating_letter(
-        'Go hang a salami, I\'m a lasagna hog!') == ','
+    # assert first_non_repeating_letter('~><#~><') == '#'
+    # assert first_non_repeating_letter('hello world, eh?') == 'w'
+    # assert first_non_repeating_letter('sTreSS') == 'T'
+    # assert first_non_repeating_letter(
+    #     'Go hang a salami, I\'m a lasagna hog!') == ','
 # endif                  
