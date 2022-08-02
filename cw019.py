@@ -75,6 +75,21 @@ def score(x):
 # enddef
 
 
+def score(dice):
+    sum = 0
+    counter = [0, 0, 0, 0, 0, 0]
+    points = [1000, 200, 300, 400, 500, 600]
+    extra = [100, 0, 0, 0, 50, 0]
+    for die in dice:
+        counter[die - 1] += 1
+    # endfor
+    for (i, count) in enumerate(counter):
+        sum += (points[i] if count >= 3 else 0) + extra[i] * (count % 3)
+    # endfor
+    return sum
+# enddef
+
+
 if __name__ == "__main__":
     assert score([2, 3, 4, 6, 2]) == 0
     assert score([4, 4, 4, 3, 3]) == 400
