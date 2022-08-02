@@ -17,8 +17,13 @@ def first_non_repeating_letter(s):
             if k in s1[i+1:]:
                 continue
             else:
-                # print(s[i])
-                return s[i]
+                if k in s1:
+                    return ""
+                else:
+                    # print(s[i])
+                    return s[i]
+                # endif
+            # endif
         # endfor
     else:
         return ""
@@ -33,7 +38,7 @@ if __name__ == "__main__":
     # assert first_non_repeating_letter('moonmen') == 'e'
     # assert first_non_repeating_letter('') == ''
     # assert first_non_repeating_letter('abba') == ''
-    assert first_non_repeating_letter('aa') == ''
+    assert first_non_repeating_letter('aaa') == ''
     # assert first_non_repeating_letter('~><#~><') == '#'
     # assert first_non_repeating_letter('hello world, eh?') == 'w'
     # assert first_non_repeating_letter('sTreSS') == 'T'
