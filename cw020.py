@@ -33,12 +33,13 @@ def first_non_repeating_letter(s):
 
 if __name__ == "__main__":
     # print(first_non_repeating_letter('stress'))
-    assert first_non_repeating_letter('a') == 'a'
+    # print(first_non_repeating_letter('a'))
+    # assert first_non_repeating_letter('a') == 'a'
     # assert first_non_repeating_letter('stress') == 't'
-    # assert first_non_repeating_letter('moonmen') == 'e'
+    assert first_non_repeating_letter('moonmen') == 'e'
     # assert first_non_repeating_letter('') == ''
     # assert first_non_repeating_letter('abba') == ''
-    assert first_non_repeating_letter('aaa') == ''
+    # assert first_non_repeating_letter('aaa') == ''
     # assert first_non_repeating_letter('~><#~><') == '#'
     # assert first_non_repeating_letter('hello world, eh?') == 'w'
     # assert first_non_repeating_letter('sTreSS') == 'T'
