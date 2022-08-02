@@ -11,7 +11,7 @@
 
 def first_non_repeating_letter(s):
     if s:
-        print(s)
+        # print(s)
         s1 = s.lower()
         for i, k in enumerate(s1):
             if not k in s1[i+1:] and not k in s1[:i]:
@@ -26,8 +26,6 @@ def first_non_repeating_letter(s):
 
 
 if __name__ == "__main__":
-    print(first_non_repeating_letter('stress'))
-    print(first_non_repeating_letter('a'))
     assert first_non_repeating_letter('a') == 'a'
     assert first_non_repeating_letter('stress') == 't'
     assert first_non_repeating_letter('moonmen') == 'e'
