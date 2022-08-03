@@ -14,5 +14,4 @@ if __name__ == "__main__":
     assert solution("camelCasing") ==  "camel Casing"
     assert solution("identifier") ==  "identifier"
     assert solution("") ==  ""
-
 # endif

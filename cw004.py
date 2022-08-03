@@ -38,7 +38,7 @@ def is_valid_walk(walk: list):
             lCoord[1] += -1
         # endif
     # endfor
-    print(f"len(walk) = {len(walk)} lCoord != {lCoord}")
+    # print(f"len(walk) = {len(walk)} lCoord != {lCoord}")
     if  len(walk) != 10 or lCoord != [0, 0]:
         return False
     # endif
@@ -51,19 +51,19 @@ if __name__ == "__main__":
     assert is_valid_walk([
         'n', 's', 'n', 's', 'n',
         's', 'n', 's', 'n', 's'
-    ]) == True
+    ]) is True
 
     # Вернулись назад за 12 минут
     assert is_valid_walk([
         'w', 'e', 'w', 'e', 'w', 'e', 'w',
         'e', 'w', 'e', 'w', 'e'
-    ]) == False
+    ]) is False
 
     # Не вернулись назад за 10 минут
     assert is_valid_walk([
         'n', 'n', 'n', 's', 'n', 's',
         'n', 's', 'n', 's'
-    ]) == False
+    ]) is False
 # endif
 
 # ===========================================================================
