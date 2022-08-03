@@ -38,6 +38,7 @@ def is_valid_walk(walk: list):
             lCoord[1] += -1
         # endif
     # endfor
+
     # print(f"len(walk) = {len(walk)} lCoord != {lCoord}")
     if  len(walk) != 10 or lCoord != [0, 0]:
         return False
