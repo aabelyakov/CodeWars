@@ -12,12 +12,23 @@
 
 
 def digital_root(n):
-    pass
+    iSum = 0
+    for k in str(n):
+        iSum += int(k)
+    # endfor
+    if len(str(iSum)) == 1:
+        print(iSum)
+        return iSum
+    else:
+        return digital_root(iSum)
+    # endif
 # enddef
+
 
 if __name__ == "__main__":
     assert digital_root(16) == 7
     assert digital_root(942) == 6
     assert digital_root(132189) == 6
     assert digital_root(493193) == 2
+    assert digital_root(23456493193) == 4
 # endif
