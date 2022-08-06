@@ -10,18 +10,18 @@ def increment_string(s: str) -> str:
     if s:
         s1 = s2 = ""
         for i, k in enumerate(s):
-            if k.isalpha():
-                s1 += k
-            elif k.isdigit():
+            if k.isdigit():
                 s2 += k
+            else:
+                s1 += k
             # endif
         # endfor
-        # print(s2)
+        print(s2)
         if s2:
             iL2 = len(s2)
             s3 = str(int(s2) + 1)
             s4 = s3.rjust(iL2, "0")
-            # print(s1 + s4)
+            print(s1 + s4)
             return s1 + s4
         else:
             return s1 + "1"
@@ -44,4 +44,5 @@ if __name__ == "__main__":
     assert increment_string("foobar99") == "foobar100"
     assert increment_string("foobar099") == "foobar100"
     assert increment_string("") == "1"
+    assert increment_string("[k'M 0208970000067") == "[k'M 0208970000068"
 # endif
