@@ -1,17 +1,24 @@
-# Завершите функцию scramble(str1  == str2)  == которая возвращает true  == если часть
-# символов str1 можно переставить так  == чтобы они соответствовали str2  == в
-# противном случае возвращает false.
+# Завершите функцию scramble(str1, str2), которая возвращает True,
+# если часть символов str1 можно переставить так, чтобы они соответствовали
+# str2, в противном случае возвращает False.
 # Будут использоваться только строчные буквы (a-z). Никакие знаки препинания
 # или цифры не будут включены.
 # Необходимо учитывать производительность.
-# Примеры:
-# scramble('rkqodlw'  == 'world') ==> True
-# scramble('cedewaraaossoqqyt'  == 'codewars') ==> True
-# scramble('katas'  == 'steak') ==> False
+
 
 def scramble(s1, s2):
-
-
+    iL2 = len(s2)
+    r2 = ""
+    for k in s2:
+        if k in s1:
+            r2 += k
+        else:
+            return False
+        # endif
+    # endfor
+    if r2 == s2:
+        return True
+    # endif
 # enddef
 
 
