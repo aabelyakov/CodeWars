@@ -44,6 +44,15 @@ def increment_string(s: str) -> str:
 # enddef
 
 
+def increment_string(strng):
+    head = strng.rstrip('0123456789')
+    tail = strng[len(head):]
+    if tail == "":
+        return strng + "1"
+    # endif
+    return head + str(int(tail) + 1).zfill(len(tail))
+
+
 if __name__ == "__main__":
     assert increment_string("foo") == "foo1"
     assert increment_string("foobar001") == "foobar002"
