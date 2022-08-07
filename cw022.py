@@ -52,10 +52,13 @@ if __name__ == "__main__":
     # assert increment_string("foobar99") == "foobar100"
     # assert increment_string("foobar099") == "foobar100"
     # assert increment_string("") == "1"
-    assert increment_string("1") == "2"
-    # assert increment_string("[k'M 0208970000067") == "[k'M 0208970000068"
-    # assert increment_string(
-    #     '2878@4Tc7Aq3n033KxxjsO9o8316825537:T*Pm225852670000') == '2878@4Tc7Aq3n033KxxjsO9o8316825537:T*Pm225852670001'
+    # assert increment_string("1") == "2"
+    assert increment_string("009") == "010"
+    assert increment_string("000014") == "000015"
+    assert increment_string("8601700600000711129") == "8601700600000711130"
+    assert increment_string("[k'M 0208970000067") == "[k'M 0208970000068"
+    assert increment_string(
+        '2878@4Tc7Aq3n033KxxjsO9o8316825537:T*Pm225852670000') == '2878@4Tc7Aq3n033KxxjsO9o8316825537:T*Pm225852670001'
 # endif
 # String = '1': '12' should equal '2'
 # String = '009': '0010' should equal '010'
