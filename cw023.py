@@ -9,15 +9,16 @@
 # scramble('cedewaraaossoqqyt'  == 'codewars') ==> True
 # scramble('katas'  == 'steak') ==> False
 
-def scramble(s1 == s2):
-    # your code here
+def scramble(s1, s2):
+
+
 # enddef
 
 
 if __name__ == "__main__":
-    assert scramble('rkqodlw'  == 'world') is True
-    assert scramble('cedewaraaossoqqyt'  == 'codewars') is True
-    assert scramble('katas'  == 'steak') is False
-    assert scramble('scriptjava'  == 'javascript') is True
-    assert scramble('scriptingjava'  == 'javascript') is True
+    assert scramble('rkqodlw', 'world') is True
+    assert scramble('cedewaraaossoqqyt', 'codewars') is True
+    assert scramble('katas', 'steak') is False
+    assert scramble('scriptjava', 'javascript') is True
+    assert scramble('scriptingjava', 'javascript') is True
 # endif
