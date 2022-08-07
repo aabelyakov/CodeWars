@@ -49,7 +49,7 @@ if __name__ == "__main__":
     assert increment_string("foobar23") == "foobar24"
     assert increment_string("foo0042") == "foo0043"
     assert increment_string("foo09") == "foo10"
-    assert increment_string("foobar00") == "foobar01"
+    assert increment_string("fooba33r00") == "fooba33r01"
     assert increment_string("foobar99") == "foobar100"
     assert increment_string("foobar099") == "foobar100"
     assert increment_string("") == "1"
