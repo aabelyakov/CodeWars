@@ -11,12 +11,13 @@ def increment_string(s: str) -> str:
         # s1 = s2 = ""
         r1 = r2 = ""
         r = "".join(reversed(s))
-        for k in r:
+        for i, k in enumerate(r):
             if k.isdigit():
                 r1 += k
             else:
-                r2 += k
+                break
             # endif
+        r2 = r[i:]
         # endfor
         s2 = "".join(reversed(r1))
         s1 = "".join(reversed(r2))
@@ -26,15 +27,15 @@ def increment_string(s: str) -> str:
             iL2 = len(s2)
             s3 = str(int(s2) + 1)
             s4 = s3.rjust(iL2, "0")
-            print(s1 + s4)
+            # print(s1 + s4)
             return s1 + s4
         else:
-            print(s1 + "1")
+            # print(s1 + "1")
             return s1 + "1"
         # endif
     else:
         s1 = "1"
-        print(s1)
+        # print(s1)
         return s1
     # endif
 # enddef
@@ -43,7 +44,7 @@ def increment_string(s: str) -> str:
 if __name__ == "__main__":
     assert increment_string("foo") == "foo1"
     assert increment_string("foobar001") == "foobar002"
-    assert increment_string("foobar0000001") == "foobar0000002"
+    assert increment_string("foo112bar0000001") == "foo112bar0000002"
     assert increment_string("foobar1") == "foobar2"
     assert increment_string("foobar23") == "foobar24"
     assert increment_string("foo0042") == "foo0043"
