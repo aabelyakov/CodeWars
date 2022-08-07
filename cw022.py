@@ -8,31 +8,34 @@
 
 def increment_string(s: str) -> str:
     if s:
-        s1 = s2 = ""
-        res = "".join(reversed(s))
-        for k in res:
+        # s1 = s2 = ""
+        r1 = r2 = ""
+        r = "".join(reversed(s))
+        for k in r:
             if k.isdigit():
-                s1 += k
+                r1 += k
             else:
-                s2 += k
+                r2 += k
             # endif
         # endfor
-        s21 = "".join(reversed(s1))
-        s11 = "".join(reversed(s2))
-        # print('s11 =', s11)
-        # print("s21 =", s21)
-        if s21:
-            iL2 = len(s21)
-            s3 = str(int(s21) + 1)
+        s2 = "".join(reversed(r1))
+        s1 = "".join(reversed(r2))
+        # print('s1 =', s1)
+        # print("s2 =", s2)
+        if s2:
+            iL2 = len(s2)
+            s3 = str(int(s2) + 1)
             s4 = s3.rjust(iL2, "0")
-            # print(s11 + s4)
-            return s11 + s4
+            print(s1 + s4)
+            return s1 + s4
         else:
-            return s11 + "1"
+            print(s1 + "1")
+            return s1 + "1"
         # endif
     else:
-        s11 = "1"
-        return s11
+        s1 = "1"
+        print(s1)
+        return s1
     # endif
 # enddef
 
