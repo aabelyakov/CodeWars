@@ -17,7 +17,11 @@ def increment_string(s: str) -> str:
                 break
             # endif
         # endfor
-        r2 = r[i:]
+        if s.isdigit():
+            r2 = r[i + 1:]
+        else:
+            r2 = r[i:]
+        # endif
         s2 = "".join(reversed(r1))
         s1 = "".join(reversed(r2))
         # print('s1 =', s1)
@@ -41,18 +45,18 @@ def increment_string(s: str) -> str:
 
 
 if __name__ == "__main__":
-    # assert increment_string("foo") == "foo1"
-    # assert increment_string("foobar001") == "foobar002"
-    # assert increment_string("foo112bar0000001") == "foo112bar0000002"
-    # assert increment_string("foobar1") == "foobar2"
-    # assert increment_string("foobar23") == "foobar24"
-    # assert increment_string("foo0042") == "foo0043"
-    # assert increment_string("foo09") == "foo10"
-    # assert increment_string("fooba33r00") == "fooba33r01"
-    # assert increment_string("foobar99") == "foobar100"
-    # assert increment_string("foobar099") == "foobar100"
-    # assert increment_string("") == "1"
-    # assert increment_string("1") == "2"
+    assert increment_string("foo") == "foo1"
+    assert increment_string("foobar001") == "foobar002"
+    assert increment_string("foo112bar0000001") == "foo112bar0000002"
+    assert increment_string("foobar1") == "foobar2"
+    assert increment_string("foobar23") == "foobar24"
+    assert increment_string("foo0042") == "foo0043"
+    assert increment_string("foo09") == "foo10"
+    assert increment_string("fooba33r00") == "fooba33r01"
+    assert increment_string("foobar99") == "foobar100"
+    assert increment_string("foobar099") == "foobar100"
+    assert increment_string("") == "1"
+    assert increment_string("1") == "2"
     assert increment_string("009") == "010"
     assert increment_string("000014") == "000015"
     assert increment_string("8601700600000711129") == "8601700600000711130"
@@ -60,7 +64,3 @@ if __name__ == "__main__":
     assert increment_string(
         '2878@4Tc7Aq3n033KxxjsO9o8316825537:T*Pm225852670000') == '2878@4Tc7Aq3n033KxxjsO9o8316825537:T*Pm225852670001'
 # endif
-# String = '1': '12' should equal '2'
-# String = '009': '0010' should equal '010'
-# String = '000014': '0000015' should equal '000015'
-# String = '8601700600000711129': '88601700600000711130' should equal '8601700600000711130'
