@@ -7,7 +7,6 @@
 def solution(n):
     lRes = []
     iRes = 0
-
     if n > 0:
         for i in range(1, n):
             if i % 3 == 0 or i % 5 == 0:
@@ -19,11 +18,10 @@ def solution(n):
     return iRes
 # enddef
 
-# Самое короткое решение
 # def solution(n):
 #     return sum(x for x in range(n) if x % 3 == 0 or x % 5 == 0)
 # enddef
-
+#
 
 if __name__ == "__main__":
     assert solution(1) == 0
