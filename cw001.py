@@ -16,15 +16,12 @@
 def duplicate_count(text):
     dRes = {}
     sLower = text.lower()
-
     for i in sLower:
         dRes[i] = 0
     # endfor
-
     for k in sLower:
         dRes[k] += 1
     # endfor
-
     return dRes
 # enddef
 
