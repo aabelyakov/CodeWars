@@ -31,8 +31,8 @@ def open_or_senior(inp):
 # enddef
 #
 
-def open_or_senior(inp):
-    return ["Senior" if (v >= 55 and i > 7) else "Open" for v, i in inp]
+# def open_or_senior(inp):
+#     return ["Senior" if (v >= 55 and i > 7) else "Open" for v, i in inp]
 # enddef
 
 
