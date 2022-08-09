@@ -47,3 +47,4 @@ if __name__ == "__main__":
     assert scramble('scriptingjava', 'javascript') is True
     assert scramble('dfgscri', 'script') is False
 # endif
+
