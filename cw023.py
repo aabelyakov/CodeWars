@@ -20,23 +20,23 @@ def scramble(s1, s2):
 # enddef
 
 
-def scramble(s1, s2):
-    for c in set(s2):
-        if s1.count(c) < s2.count(c):
-            return False
-        # endif
-    # endfor
-    return True
-# enddef
+# def scramble(s1, s2):
+#     for c in set(s2):
+#         if s1.count(c) < s2.count(c):
+#             return False
+#         # endif
+#     # endfor
+#     return True
+# # enddef
 
 
-from collections import Counter
-def scramble(s1, s2):
-    # Counter создает словарь {буква: счётчик вхождений}
-    # Используя вычитание множеств, мы знаем, что если что-то останется,
-    # то это существует в s2, но отсутствует в s1
-    return len(Counter(s2) - Counter(s1)) == 0
-# enddef
+# from collections import Counter
+# def scramble(s1, s2):
+#     # Counter создает словарь {буква: счётчик вхождений}
+#     # Используя вычитание множеств, мы знаем, что если что-то останется,
+#     # то это существует в s2, но отсутствует в s1
+#     return len(Counter(s2) - Counter(s1)) == 0
+# # enddef
 
 
 if __name__ == "__main__":

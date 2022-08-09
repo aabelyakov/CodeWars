@@ -44,13 +44,14 @@ def increment_string(s: str) -> str:
 # enddef
 
 
-def increment_string(strng):
-    head = strng.rstrip('0123456789')
-    tail = strng[len(head):]
-    if tail == "":
-        return strng + "1"
-    # endif
-    return head + str(int(tail) + 1).zfill(len(tail))
+# def increment_string(strng):
+#     head = strng.rstrip('0123456789')
+#     tail = strng[len(head):]
+#     if tail == "":
+#         return strng + "1"
+#     # endif
+#     return head + str(int(tail) + 1).zfill(len(tail))
+# enddef
 
 
 if __name__ == "__main__":
