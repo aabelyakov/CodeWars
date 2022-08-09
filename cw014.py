@@ -99,6 +99,6 @@ if __name__ == "__main__":
     assert to_morse("SoS") == "... --- ..."
     assert to_morse("HeLLo") == ".... . .-.. .-.. ---"
     assert from_morse(".... . .-.. .-.. ---") == "HELLO"
-    assert to_morse('hEY JuDE hellO') == ".... . -.--   .--- ..- -.. .   " \
-                                         ".... . .-.. .-.. ---"
+    assert to_morse('hEY JuDE hellO') == \
+           ".... . -.--   .--- ..- -.. .   .... . .-.. .-.. ---"
 # endif
