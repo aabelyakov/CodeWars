@@ -10,18 +10,17 @@
 
 
 def first_non_repeating_letter(s):
-    if s:
-        # print(s)
-        s1 = s.lower()
-        for i, k in enumerate(s1):
-            if not k in s1[i+1:] and not k in s1[:i]:
-                return s[i]
-            # endif
-        # endfor
-        return ""
-    else:
+    if not s:
         return ""
     # endif
+    # print(s)
+    s1 = s.lower()
+    for i, k in enumerate(s1):
+        if not k in s1[i+1:] and not k in s1[:i]:
+            return s[i]
+        # endif
+    # endfor
+    return ""
 # enddef
 
 
@@ -37,4 +36,4 @@ if __name__ == "__main__":
     assert first_non_repeating_letter('sTreSS') == 'T'
     assert first_non_repeating_letter(
         'Go hang a salami, I\'m a lasagna hog!') == ','
-# endif                  
+# endif
