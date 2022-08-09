@@ -9,7 +9,7 @@ def solution(s):
     iLen = len(lOut)
     if iLen > 0 and len(lOut[iLen-1]) < 2:
         lOut[iLen-1] += "_"
-     # endif
+    # endif
     # print(lOut)
     return lOut
 # enddef
