@@ -22,25 +22,25 @@
 # n - длина массива строк,
 # если n == 0 или k > n или k <= 0 вернуть ""
 
+
 def longest_consec(r, k):
     l2 = []
     l3 = []
     ss = {}
     n = len(r)
-    if not (n == 0 or k > n or k<= 0):
-        for i in range(0, n, 2):
-            l1 = r[i:k + i]
-            l2.append("".join(l1))
-        # endfor
-        for i, s in enumerate(l2):
-            ss[len(s)] = s
-            l3.append(len(s))
-        # endfor
-        h = max(l3)
-        return ss[h]
-    else:
+    if n == 0 or k > n or k <= 0:
         return ""
     # endif
+    for i in range(0, n, 2):
+        l1 = r[i:k + i]
+        l2.append("".join(l1))
+    # endfor
+    for i, s in enumerate(l2):
+        ss[len(s)] = s
+        l3.append(len(s))
+    # endfor
+    h = max(l3)
+    return ss[h]
 # enddef
 
 
@@ -55,13 +55,13 @@ if __name__ == "__main__":
     assert longest_consec([], 3) == ""
     assert longest_consec(
         ["itvayloxrp", "wkppqsztdkmvcuwvereiupccauycnjutlv",
-        "vweqilsfytihvrzlaodfixoyxvyuyvgpck"], 2
+         "vweqilsfytihvrzlaodfixoyxvyuyvgpck"], 2
     ) == "itvayloxrpwkppqsztdkmvcuwvereiupccauycnjutlv"
     assert longest_consec(
         ["wlwsasphmxx", "owiaxujylentrklctozmymu", "wpgozvxxiu"], 2
     ) == "wlwsasphmxxowiaxujylentrklctozmymu"
     assert longest_consec(
-        ["zone", "abigail", "theta", "form", "libe","zas"], -2
+        ["zone", "abigail", "theta", "form", "libe", "zas"], -2
     ) == ""
     assert longest_consec(
         ["it", "wkppv", "ixoyx", "3452", "zzzzzzzzzzzz"], 3
