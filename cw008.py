@@ -13,14 +13,16 @@ def solution(st, ending):
 # enddef
 
 
-if __name__ == "__main__":
-    assert solution('abcde', 'cde') == True
-    assert solution('abcde', 'abc') == False
-    assert solution('abcde', '') == True
-# endif
-
 # Лучшее решение:
 # def (st, ending):
 #     return st.endswith(ending)
 # enddef
+
+
+if __name__ == "__main__":
+    assert solution('abcde', 'cde') is True
+    assert solution('abcde', 'abc') is False
+    assert solution('abcde', '') is True
+# endif
+
 

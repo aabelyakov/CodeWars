@@ -7,16 +7,15 @@
 
 def to_camel_case(text):
     sText = ""
-    print(text)
+    # print(text)
     lText = text.replace("_", "-").split("-")
-    print(lText)
-    # lText1 = [i.capitalize() for i in lText]
+    # print(lText)
     lText1 = [i.title() for i in lText]
     sText = "".join(lText1)
     if text and text[0].islower():
         sText = sText[0].lower() + sText[1:]
     # endif
-    print(sText)
+    # print(sText)
     return sText
 # enddef
 

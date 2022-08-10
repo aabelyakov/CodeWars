@@ -17,6 +17,7 @@ def find_outlier(n):
     # endif
 # enddef
 
+
 if __name__ == "__main__":
     assert find_outlier([2, 4, 6, 8, 10, 3]) == 3
     assert find_outlier([2, 4, 0, 100, 4, 11, 2602, 36]) == 11

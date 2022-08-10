@@ -34,5 +34,3 @@ if __name__ == "__main__":
     assert pig_it('This is my string') == 'hisTay siay ymay tringsay'
 # endif
 
-
-# "O tempora o mores !" ==> 'Oay emporatay oay oresmay !'

@@ -18,7 +18,7 @@
 # месте.
 
 # [широта, долгота]
-# Начальная позиция lCoord = [{0, 0]
+# Начальная позиция lCoord = [0, 0]
 # "n" - север - +1
 # "s" - юг    - -1
 # "e" - восток  - +1
@@ -26,7 +26,6 @@
 
 def is_valid_walk(walk: list):
     lCoord = [0, 0]
-
     for i in walk:
         if i == "n":
             lCoord[0] += 1
@@ -38,7 +37,6 @@ def is_valid_walk(walk: list):
             lCoord[1] += -1
         # endif
     # endfor
-    print(f"len(walk) = {len(walk)} lCoord != {lCoord}")
     if  len(walk) != 10 or lCoord != [0, 0]:
         return False
     # endif
@@ -51,30 +49,28 @@ if __name__ == "__main__":
     assert is_valid_walk([
         'n', 's', 'n', 's', 'n',
         's', 'n', 's', 'n', 's'
-    ]) == True
+    ]) is True
 
     # Вернулись назад за 12 минут
     assert is_valid_walk([
-        'w', 'e', 'w', 'e', 'w', 'e', 'w',
-        'e', 'w', 'e', 'w', 'e'
-    ]) == False
+        'w', 'e', 'w', 'e', 'w', 'e', 'w', 'e', 'w', 'e', 'w', 'e'
+    ]) is False
 
     # Не вернулись назад за 10 минут
     assert is_valid_walk([
-        'n', 'n', 'n', 's', 'n', 's',
-        'n', 's', 'n', 's'
-    ]) == False
+        'n', 'n', 'n', 's', 'n', 's', 'n', 's', 'n', 's'
+    ]) is False
+
+    assert is_valid_walk([
+        'n', 's', 'n', 's', 'n', 's', 'n', 's', 'n', 's'
+    ]) is True
+
+    assert is_valid_walk([
+        'w', 'e', 'w', 'e', 'w', 'e', 'w', 'e', 'w', 'e', 'w', 'e'
+    ]) is False
+
+    assert is_valid_walk([
+        'n', 'n', 'n', 's', 'n', 's', 'n', 's', 'n', 's'
+    ]) is False
 # endif
 
-# ===========================================================================
-# # some test cases for you...
-# test.expect(
-#     is_valid_walk(['n', 's', 'n', 's', 'n', 's', 'n', 's', 'n', 's']),
-#     'should return True');
-# test.expect(not is_valid_walk(
-#     ['w', 'e', 'w', 'e', 'w', 'e', 'w', 'e', 'w', 'e', 'w', 'e']),
-#             'should return False');
-# test.expect(not is_valid_walk(['w']), 'should return False');
-# test.expect(
-#     not is_valid_walk(['n', 'n', 'n', 's', 'n', 's', 'n', 's', 'n', 's']),
-#     'should return False');

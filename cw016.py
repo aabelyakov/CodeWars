@@ -16,8 +16,8 @@ def create_phone_number(n):
 
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 # Потрясающее решение
-def create_phone_number(n):
-    return "({}{}{}) {}{}{}-{}{}{}{}".format(*n)
+# def create_phone_number(n):
+#     return "({}{}{}) {}{}{}-{}{}{}{}".format(*n)
 # enddef
 
 

@@ -16,23 +16,18 @@
 def duplicate_count(text):
     dRes = {}
     sLower = text.lower()
-
     for i in sLower:
         dRes[i] = 0
     # endfor
-
     for k in sLower:
         dRes[k] += 1
     # endfor
-
     return dRes
 # enddef
 
 
 if __name__ == "__main__":
-    dRes = duplicate_count("aAsdd4dgH5hh67asdfasdFGHJ457")
-    print(dRes)
-    assert dRes == {
+    assert duplicate_count("aAsdd4dgH5hh67asdfasdFGHJ457") == {
         'a': 4, 's': 3, 'd': 5, '4': 2, 'g': 2, 'h': 4, '5': 2,
         '6': 1, '7': 2, 'f': 2, 'j': 1
     }
