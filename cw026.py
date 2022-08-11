@@ -26,6 +26,9 @@
 # последовательными числами.
 
 
+# from collections import namedtuple
+
+
 def rec(n):
     if n == 0:
         return 0
@@ -40,20 +43,29 @@ def gen(s):
         return ""
     # endif
     l = [int(x.strip()) for x in s.split(" ") if x != ""]
-    print(l)
+    # print(l)
     for m in l:
         yield m
     # endfor
 # enddef
 
 def order_weight(s):
+    # print(s)
+    sRes = ""
+    lRes1 = [i for i in gen(s)]
     lRes = [rec(i) for i in gen(s)]
-    print(lRes)
-    lRes.sort()
-    return lRes
+    # print(lRes1)
+    # print(lRes)
+    dRes = dict(zip(lRes1, lRes))
+    dResSort = dict(sorted(dRes.items()))
+    # print(dResSort)
+    for k, z in dResSort.items():
+        sRes += str(k) + " "
+    # endfor
+    return sRes.rstrip()
 # enddef
-
-
+# dict(sorted(rooms.items()))
+# sorted(rooms.items())
 if __name__ == "__main__":
     # print(rec(103))
     # print(rec(123))
@@ -61,8 +73,15 @@ if __name__ == "__main__":
     # print(rec(99))
     # print(rec(2000))
     # assert order_weight("103 123 4444 99 2000") == "2000 103 123 4444 99"
-    print(order_weight(" 103  123 4444    99 2000  "))
+    # print(order_weight("56 65 74 100 99 68 86 180 90"))
+    # assert order_weight(
+    #     "56 65 74 100 99 68 86 180 90"
+    # ) == "100 180 90 56 65 74 68 86 99"
+    # print(order_weight(" 103  123 4444    99 2000  "))
     # assert order_weight(
     #     "2000 10003 1234000 44444444 9999 11 11 22 123"
     # ) == "11 11 2000 10003 22 123 1234000 44444444 9999"
-    # assert order_weight("") == ""
+    print(order_weight(
+        "2000 10003 1234000 44444444 9999 11 11 22 123"
+    ))
+    assert order_weight("") == ""
