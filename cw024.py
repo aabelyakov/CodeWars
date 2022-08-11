@@ -21,25 +21,6 @@ slovar.update(zip(slova, numbers))
 print(slovar)
 print(slovar.get('ноль'))
 # '0'
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# Генерация названия int числа с единицами измерения
-# from number_to_text import num2text
-# male_units = ((u'рубль', u'рубля', u'рублей'), 'm')
-# female_units = ((u'копейка', u'копейки', u'копеек'), 'f')
-# male_units это plural-формы для единицы измерения и ее род 'm' - мужской,
-# 'f' - женский
-# num2text(101, male_units)  # первая plural форма, мужской род
-# u'сто один рубль'
-# num2text(102, male_units)  # вторая plural форма, мужской род
-# u'сто два рубля'
-# num2text(101, female_units)  # первая plural форма, женский род
-# u'сто одна копейка'
-# num2text(102, female_units)  # вторая plural форма, женский род
-# u'сто две копейки'
-# num2text(105, female_units)  # третья plural форма, женский род
-# u'сто пять копеек'
-
-# ==============================================================
 
 
 if __name__ == "__main__":
