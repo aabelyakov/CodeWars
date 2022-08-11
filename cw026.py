@@ -14,12 +14,28 @@
 # отсортировать эту строку по «весам» этих чисел?
 
 
-def order_weight(strng):
-    # your code
+def order_weight(s):
+    # print(s)
+    res = ""
+    if s == "":
+        return ""
+    # endif
+    l = [int(x) for x in s.split(" ")]
+    print(l)
+    return l
+# enddef
+
+    # print(l)
+    # for k in l:
+    #     res += k % 10 + order_weight(k // 10)
+    # endfor
+    return res
+# enddef
+
 
 if __name__ == "__main__":
     assert order_weight("103 123 4444 99 2000") == "2000 103 123 4444 99"
-    assert order_weight(
-        "2000 10003 1234000 44444444 9999 11 11 22 123"
-    ) == "11 11 2000 10003 22 123 1234000 44444444 9999"
-    assert order_weight("") == ""
+    # assert order_weight(
+    #     "2000 10003 1234000 44444444 9999 11 11 22 123"
+    # ) == "11 11 2000 10003 22 123 1234000 44444444 9999"
+    # assert order_weight("") == ""
