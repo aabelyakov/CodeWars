@@ -28,26 +28,46 @@
 # последовательными числами.
 # Для C: результат освобождается.
 
-def order_weight(s):
+
+def recur(n):
+    if n == 0:
+        return 0
+    # endif
+    return n % 10 + recur(n // 10)
+# enddef
+
+
+def gen(s):
     if s == "":
         return ""
     # endif
-    l = [int(x) for x in s.split(" ")]
+    l = [int(x.strip()) for x in s.split(" ") if x != ""]
     print(l)
-    return l
+    for m in l:
+        yield m
+    # endfor
 # enddef
 
-    # print(l)
-    # for k in l:
-    #     res += k % 10 + order_weight(k // 10)
+def order_weight(s):
+    res = ""
+    for i in gen(s):
+        # print(type(n))
+        m = recur(i)
+        res += str(m) + " "
     # endfor
-    return res
+    return res.rstrip()
 # enddef
 
 
 if __name__ == "__main__":
+    # print(recur(103))
+    # print(recur(123))
+    # print(recur(123))
+    # print(recur(444))
+    # print(recur(99))
+    # print(recur(2000))
     # assert order_weight("103 123 4444 99 2000") == "2000 103 123 4444 99"
-    print(order_weight("103 123 4444 99 2000"))
+     print(order_weight("103  123 4444    99 2000"))
     # assert order_weight(
     #     "2000 10003 1234000 44444444 9999 11 11 22 123"
     # ) == "11 11 2000 10003 22 123 1234000 44444444 9999"
