@@ -38,11 +38,16 @@ def rec(n):
     # endif
     return n % 10 + rec(n // 10)
 # enddef
-def rec(n):
-    """ Вычисление суммы цифр числа n
-        n - строка с целым числом
-    """
-    return sum(int(c) for c in n)
+
+
+def order_weight(s):
+    print(s)
+    l = s.split()
+    print(l)
+    iRes = sum(int(c) for c in l)
+    return iRes
+# enddef
+
 
 def gen(s):
     """Генератор, выдающий следующее целое число из списка l"""
@@ -58,27 +63,27 @@ def gen(s):
 
 
 
-def order_weight(s):
-    # print(s)
-    sRes = ""
-    lRes1 = [i for i in gen(s)]
-    lRes = [rec(i) for i in gen(s)]
-    # print(lRes1)
-    # print(lRes)
-    dRes = dict(zip(lRes1, lRes))
-    dResSort = dict(sorted(dRes.items()))
-    # print(dResSort)
-    for k, z in dResSort.items():
-        sRes += str(k) + " "
-    # endfor
-    return sRes.rstrip()
-# enddef
-
+# def order_weight(s):
+#     # print(s)
+#     sRes = ""
+#     lRes1 = [i for i in gen(s)]
+#     lRes = [rec(i) for i in gen(s)]
+#     # print(lRes1)
+#     # print(lRes)
+#     dRes = dict(zip(lRes1, lRes))
+#     dResSort = dict(sorted(dRes.items()))
+#     # print(dResSort)
+#     for k, z in dResSort.items():
+#         sRes += str(k) + " "
+#     # endfor
+#     return sRes.rstrip()
+# # enddef
+#
 
 # Потрясающие решения
-def order_weight(s):
-    return ' '.join(sorted(sorted(s.split(' ')),
-        key=lambda x: sum(int(c) for c in x)))
+# def order_weight(s):
+#     return ' '.join(sorted(sorted(s.split(' ')),
+#         key=lambda x: sum(int(c) for c in x)))
 # enddef
 
 # В следующем примере, в списке x представлена последовательность чисел в
@@ -105,8 +110,8 @@ def order_weight(s):
 
 
 if __name__ == "__main__":
-    print(rec("4444"))
-    # assert order_weight("103 123 4444 99 2000") == "2000 103 123 4444 99"
+    print(order_weight("103 123 4444 99 2000"))
+    # assert order_weight == "2000 103 123 4444 99"
     # assert order_weight(
     #     "56 65 74 100 99 68 86 180 90"
     # ) == "100 180 90 56 65 74 68 86 99"
