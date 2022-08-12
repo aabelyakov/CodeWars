@@ -25,66 +25,17 @@
 # пробелы, а также более чем один уникальный пробел между двумя
 # последовательными числами.
 
-
-# from collections import namedtuple
-
-
-def rec(n):
-    """ Вычисление суммы цифр числа n.
-        n - целое число
-    """
-    if n == 0:
-        return 0
-    # endif
-    return n % 10 + rec(n // 10)
-# enddef
-
-
-def order_weight(s):
-    print(s)
-    l = s.split()
-    print(l)
-    iRes = sum(int(c) for c in l)
-    return iRes
-# enddef
-
-
-def gen(s):
-    """Генератор, выдающий следующее целое число из списка l"""
-    if s == "":
-        return ""
-    # endif
-    l = [int(x.strip()) for x in s.split(" ") if x != ""]
-    # print(l)
-    for m in l:
-        yield m
-    # endfor
-# enddef
-
-
-
-# def order_weight(s):
-#     # print(s)
-#     sRes = ""
-#     lRes1 = [i for i in gen(s)]
-#     lRes = [rec(i) for i in gen(s)]
-#     # print(lRes1)
-#     # print(lRes)
-#     dRes = dict(zip(lRes1, lRes))
-#     dResSort = dict(sorted(dRes.items()))
-#     # print(dResSort)
-#     for k, z in dResSort.items():
-#         sRes += str(k) + " "
-#     # endfor
-#     return sRes.rstrip()
-# # enddef
-#
-
 # Потрясающие решения
 # def order_weight(s):
 #     return ' '.join(sorted(sorted(s.split(' ')),
 #         key=lambda x: sum(int(c) for c in x)))
 # enddef
+
+
+def order_weight(s):
+    return ' '.join(sorted(s.split(), key=lambda x: (sum(map(int, x)), x)))
+# enddef
+
 
 # В следующем примере, в списке x представлена последовательность чисел в
 # качестве строк. При простой сортировке будет использоваться
@@ -104,19 +55,19 @@ def gen(s):
 # x
 # ['9', '11', '15', '25', '55']
 
-# def order_weight(s):
-#     return ' '.join(sorted(s.split(), key=lambda x: (sum(map(int, x)), x)))
-# # enddef
-
 
 if __name__ == "__main__":
-    print(order_weight("103 123 4444 99 2000"))
-    # assert order_weight == "2000 103 123 4444 99"
-    # assert order_weight(
-    #     "56 65 74 100 99 68 86 180 90"
-    # ) == "100 180 90 56 65 74 68 86 99"
-    # assert order_weight(
-    #     "2000 10003 1234000 44444444 9999 11 11 22 123"
-    # ) == "11 11 2000 10003 22 123 1234000 44444444 9999"
-    # assert order_weight("") == ""
+    assert order_weight(
+        "  103    123 4444 99 2000    "
+    ) == "2000 103 123 4444 99"
+    assert order_weight(
+        "  103   123 4444 99 2000"
+    ) == "2000 103 123 4444 99"
+    assert order_weight(
+        "56 65 74 100 99 68 86 180 90"
+    ) == "100 180 90 56 65 74 68 86 99"
+    assert order_weight(
+        "2000 10003 1234000 44444444 9999 11 11 22 123"
+    ) == "11 11 2000 10003 22 123 1234000 44444444 9999"
+    assert order_weight("") == ""
 # endif
