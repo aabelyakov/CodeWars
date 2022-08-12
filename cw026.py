@@ -24,19 +24,6 @@
 # может случиться так, что входная строка содержит начальные и конечные
 # пробелы, а также более чем один уникальный пробел между двумя
 # последовательными числами.
-
-# Потрясающие решения
-# def order_weight(s):
-#     return ' '.join(sorted(sorted(s.split(' ')),
-#         key=lambda x: sum(int(c) for c in x)))
-# # enddef
-
-
-def order_weight(s):
-    return ' '.join(sorted(s.split(), key=lambda x: (sum(map(int, x)), x)))
-# enddef
-
-
 # В следующем примере, в списке x представлена последовательность чисел в
 # качестве строк. При простой сортировке будет использоваться
 # лексикографическое сравнение.
@@ -54,6 +41,18 @@ def order_weight(s):
 # x.sort(key=int)
 # x
 # ['9', '11', '15', '25', '55']
+
+
+# Потрясающие решения
+# def order_weight(s):
+#     return ' '.join(sorted(sorted(s.split(' ')),
+#         key=lambda x: sum(int(c) for c in x)))
+# # enddef
+
+
+def order_weight(s):
+    return ' '.join(sorted(s.split(), key=lambda x: (sum(map(int, x)), x)))
+# enddef
 
 
 if __name__ == "__main__":
