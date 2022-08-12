@@ -29,7 +29,7 @@
 # def order_weight(s):
 #     return ' '.join(sorted(sorted(s.split(' ')),
 #         key=lambda x: sum(int(c) for c in x)))
-# enddef
+# # enddef
 
 
 def order_weight(s):
@@ -58,7 +58,7 @@ def order_weight(s):
 
 if __name__ == "__main__":
     assert order_weight(
-        "  103    123 4444 99 2000    "
+        "   103   123 4444 99 2000   "
     ) == "2000 103 123 4444 99"
     assert order_weight(
         "  103   123 4444 99 2000"
