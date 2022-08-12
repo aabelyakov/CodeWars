@@ -67,10 +67,28 @@ def order_weight(s):
 
 
 # Потрясающие решения
-# def order_weight(s):
-#     return ' '.join(sorted(sorted(s.split(' ')), key=lambda x: sum(int(c) for c in x)))
-# # enddef
+def order_weight(s):
+    return ' '.join(sorted(sorted(s.split(' ')),
+        key=lambda x: sum(int(c) for c in x)))
+# enddef
 
+# В следующем примере, в списке x представлена последовательность чисел в
+# качестве строк. При простой сортировке будет использоваться
+# лексикографическое сравнение.
+#
+# x = ['55', '11', '25', '15', '9']
+# x.sort()
+# x
+# ['11', '15', '25', '55', '9']
+
+# Применим в качестве ключевой функции для сравнения класс int(), для
+# преобразования строк в целые числа, что бы упорядочить последовательность
+# строк так, как будто это список чисел.
+
+# x = ['55', '11', '25', '15', '9']
+# x.sort(key=int)
+# x
+# ['9', '11', '15', '25', '55']
 
 # def order_weight(s):
 #     return ' '.join(sorted(s.split(), key=lambda x: (sum(map(int, x)), x)))
