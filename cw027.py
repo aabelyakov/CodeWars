@@ -14,15 +14,21 @@
 
 def solution(s):
     m = s[0]
-    iRes = []
+    lRes = [m]
+    lRes1 = []
+    n = 1
     for k in s[1:]:
         if k - m != 1:
-            iRes.append(k)
+            lRes.append(str(k))
         else:
-
+            # Интервал
+            lRes1.append(str(k))
         m = k
-    print(iRes)
-
+        n += 1
+    # endfor
+    print(lRes)
+    print(lRes1)
+    return
     # enddef
 
 
