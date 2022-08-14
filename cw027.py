@@ -12,10 +12,17 @@
 # диапазона.
 
 
-from intvalpy import Interval, precision
+from intvalpy import Interval
 
-data = Interval(1, 2)
+
+# В случае, когда пользователь хочет создать массив интервалов, то ему
+# следует указать массивы правых и левых концов. Например:
+
+a = [2, 7, -3]
+b = [4, 5, 1]
+data = Interval(a, b)
 print(data)
+
 def solution(s):
     m = s[0]
     lRes = [m]
@@ -35,11 +42,12 @@ def solution(s):
     for c in lRes1:
         pass
     return
-    # enddef
+# enddef
 
 
 if __name__ == "__main__":
-    print(solution([-6, -3, -2, -1, 0, 1, 3, 4, 5, 7, 8]))
+    pass
+    # print(solution([-6, -3, -2, -1, 0, 1, 3, 4, 5, 7, 8]))
     # assert solution([
     #     -6, -3, -2, -1, 0, 1, 3, 4, 5, 7, 8,
     #     9, 10, 11, 14, 15, 17, 18, 19, 20
