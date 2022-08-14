@@ -12,6 +12,10 @@
 # диапазона.
 
 
+from intvalpy import Interval, precision
+
+data = Interval(1, 2)
+print(data)
 def solution(s):
     m = s[0]
     lRes = [m]
