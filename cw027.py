@@ -25,13 +25,13 @@ from intvalpy import Interval
 
 def solution(s):
     # Предшествующий элемент списка
-    m = s[0]
+    m = s[0]        # [-6, -3, -2, -1, 0, 1, 3, 4, 5, 7, 8]
     lRes = []
-    # lRes1 = []
+    lRes1 = []
     n = 1
     for k in s[1:]:
         if k - m == 1:
-            lRes.append(m)
+            lRes1.append(m)
             lRes.append(str(k))
         # else:
         #     # Интервал
@@ -39,6 +39,7 @@ def solution(s):
         m = k
         n += 1
     # endfor
+
     # print()
     # print(lRes1)
     # for c in lRes1:
