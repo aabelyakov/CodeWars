@@ -28,6 +28,8 @@ def solution(s):
     # endfor
     print(lRes)
     print(lRes1)
+    for c in lRes1:
+        pass
     return
     # enddef
 
