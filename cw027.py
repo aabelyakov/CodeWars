@@ -13,7 +13,7 @@
 # диапазона.
 
 
-# from intvalpy import Interval
+from intvalpy import Interval
 
 
 # В случае, когда пользователь хочет создать массив интервалов, ему
@@ -26,7 +26,7 @@
 
 def solution(s):
     # [-6, -3, -2, -1, 0, 1, 3, 4, 5, 7, 8]
-    b = min(s) - 1
+    b = s[0]
     # b = s[0]
     lRes1 = []
     lRes2 = []
@@ -34,17 +34,20 @@ def solution(s):
     for k in s[1:]:
         if k - b == 1:
             # Конец интервала
-            lRes1.append(k)
+            # lRes1.append(k)
+            pass
         else:
             # Начало интервала
             lRes2.append(k)
+            lRes1.append(b)
         # endif
         b = k
         n += 1
     # endfor
-
+    data = Interval(lRes1, lRes2)
     print(lRes1)
     print (lRes2)
+    print(data)
     return
 # enddef
 
