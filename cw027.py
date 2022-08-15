@@ -13,44 +13,45 @@
 # диапазона.
 
 
-from intvalpy import Interval
+# from intvalpy import Interval
 
 
-# В случае, когда пользователь хочет создать массив интервалов, то ему
+# В случае, когда пользователь хочет создать массив интервалов, ему
 # следует указать массивы правых и левых концов. Например:
 
-a = [5, -3]
-b = [3,  1]
-data = Interval(a, b)
-print(data)
+# a = [5, -3]
+# b = [3,  1]
+# data = Interval(a, b)
+# print(data)
 
 def solution(s):
     # [-6, -3, -2, -1, 0, 1, 3, 4, 5, 7, 8]
+    b = min(s) - 1
+    # b = s[0]
     lRes1 = []
     lRes2 = []
     n = 1
-    for b in s:
-        for k in s[1:]:
-            if k - b == 1:
-                lRes1.append(b)
-                if n == 3:
-                    print("Есть интервал!")
-
-            else:
-                # Конец интервала
-                lRes2.append(str(k))
-            n += 1
+    for k in s[1:]:
+        if k - b == 1:
+            # Конец интервала
+            lRes1.append(k)
+        else:
+            # Начало интервала
+            lRes2.append(k)
+        # endif
+        b = k
+        n += 1
     # endfor
 
-    # print()
-    # print(lRes1)
-    return lRes1
+    print(lRes1)
+    print (lRes2)
+    return
 # enddef
 
 
 if __name__ == "__main__":
     pass
-    # print(solution([-6, -3, -2, -1, 0, 1, 3, 4, 5, 7, 8]))
+    print(solution([-6, -3, -2, -1, 0, 1, 3, 4, 5, 7, 8]))
     # assert solution([
     #     -6, -3, -2, -1, 0, 1, 3, 4, 5, 7, 8,
     #     9, 10, 11, 14, 15, 17, 18, 19, 20
