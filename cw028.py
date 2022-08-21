@@ -8,18 +8,16 @@
 from itertools import permutations
 
 
-def permutations(s):
-    # lst = [''.join(p) for p in permutations(s)]
-    lst = list(permutations(s))
-    print(lst)
+def perm(s):
+    lst = [''.join(p) for p in permutations(s)]
+    return set(lst)
 # enddef
 
 
 if __name__ == "__main__":
-    # assert sorted(permutations('a')) == ['a']
-    # assert sorted(permutations('ab')) == ['ab', 'ba']
-    print(sorted(permutations('ab')))
-    # assert sorted(permutations('aabb')) == [
-    #     'aabb', 'abab', 'abba', 'baab', 'baba', 'bbaa'
-    # ]
+    assert sorted(perm('a')) == ['a']
+    assert sorted(perm('ab')) == ['ab', 'ba']
+    assert sorted(perm('aabb')) == [
+        'aabb', 'abab', 'abba', 'baab', 'baba', 'bbaa'
+    ]
 # endif
