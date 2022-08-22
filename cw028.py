@@ -5,19 +5,19 @@
 # все буквы из ввода во всех возможных порядках.
 
 
-from itertools import permutations
+from itertools import permutations as perm
 
 
-def perm(s):
-    lst = [''.join(p) for p in permutations(s)]
+def permutations(s):
+    lst = [''.join(p) for p in perm(s)]
     return set(lst)
 # enddef
 
 
 if __name__ == "__main__":
-    assert sorted(perm('a')) == ['a']
-    assert sorted(perm('ab')) == ['ab', 'ba']
-    assert sorted(perm('aabb')) == [
+    assert sorted(permutations('a')) == ['a']
+    assert sorted(permutations('ab')) == ['ab', 'ba']
+    assert sorted(permutations('aabb')) == [
         'aabb', 'abab', 'abba', 'baab', 'baba', 'bbaa'
     ]
 # endif
