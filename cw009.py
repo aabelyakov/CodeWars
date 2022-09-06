@@ -13,6 +13,7 @@
 # "Senior" с указанием старшей или открытой категории членства.
 
 
+
 def open_or_senior(inp):
     outp = []
     for v, i in inp:
