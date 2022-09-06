@@ -4,7 +4,6 @@
 #
 # Examples:
 # strarr = ["tree", "foling", "trashy", "blue", "abcdef", "uvwxyz"], k = 2
-
 # Объединив последовательные строки strarr на 2, мы получим:
 # treefoling   (length 10)  concatenation of strarr[0] and strarr[1]
 # folingtrashy ("      12)  concatenation of strarr[1] and strarr[2]

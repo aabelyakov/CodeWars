@@ -9,6 +9,7 @@
 # пустую строку ("") или None — см. примеры тестов.
 
 
+
 def first_non_repeating_letter(s):
     if not s:
         return ""
