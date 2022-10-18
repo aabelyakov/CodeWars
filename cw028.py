@@ -7,7 +7,6 @@
 
 from itertools import permutations as perm
 
-
 def permutations(s):
     lst = [''.join(p) for p in perm(s)]
     return set(lst)
