@@ -18,6 +18,7 @@ def digital_root(n):
 # enddef
 
 
+
 if __name__ == "__main__":
     assert digital_root(16) == 7
     assert digital_root(942) == 6
@@ -25,3 +26,4 @@ if __name__ == "__main__":
     assert digital_root(493193) == 2
     assert digital_root(23456493193) == 4
 # endif
+
