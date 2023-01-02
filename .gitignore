@@ -23,8 +23,9 @@ dist/
 target/
 dist/
 
-# JetBrains IDE
+# IDE
 .idea/
+.vscode/
 
 # Виртуальное окружение
 venv/
